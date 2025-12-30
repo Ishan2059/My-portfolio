@@ -30,7 +30,7 @@ export default function About() {
                             </span>
                         </h2>
                         <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                            I am a dedicated software engineer with a focus on building accessible, pixel-perfect user interfaces that blend art with code.
+                            I am a dedicated UI/UX Designer with a focus on building accessible, pixel-perfect user interfaces that blend art with code.
                         </p>
                         <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                             I approach design with empathy, research, and iteration—starting from understanding user needs to delivering polished, scalable solutions. I’m especially interested in crafting seamless user flows, meaningful interactions, and modern design systems that balance usability with business goals.
