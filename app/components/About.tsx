@@ -32,8 +32,8 @@ export default function About() {
                         <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                             I am a dedicated software engineer with a focus on building accessible, pixel-perfect user interfaces that blend art with code.
                         </p>
-                        <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                            Back in 2018, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for varied clients.
+                        <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                            I approach design with empathy, research, and iteration—starting from understanding user needs to delivering polished, scalable solutions. I’m especially interested in crafting seamless user flows, meaningful interactions, and modern design systems that balance usability with business goals.
                         </p>
                         <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                             When I'm not at the computer, I'm usually hanging out with my friends, reading, or running.

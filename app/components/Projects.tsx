@@ -3,22 +3,22 @@ import Image from "next/image";
 export default function Projects() {
     const projects = [
         {
-            title: "E-Commerce Platform",
-            description: "A full-stack e-commerce solution built with Next.js, Stripe, and PostgreSQL. Features real-time inventory and secure checkout.",
-            tags: ["Next.js", "Stripe", "PostgreSQL"],
-            link: "#",
+            title: "Travel Website UI",
+            description: "A clean, intuitive interface designed for speed and ease. Effortlessly search, compare, and book your next adventure using a modern, minimalist layout that focuses on what matters: your journey.",
+            tags: ["User Experience", "Figma", "Information Architecute"],
+            link: "https://www.behance.net/dwfice",
         },
         {
-            title: "Task Management App",
-            description: "A collaborative task manager with real-time updates using Socket.io. Includes drag-and-drop organization and team workspaces.",
-            tags: ["React", "Node.js", "Socket.io"],
-            link: "#",
+            title: "Habit Flow",
+            description: "A clean, intuitive interface designed for consistency. Easily track progress and build lasting routines with a modern, distraction-free design that motivates daily achievement.",
+            tags: ["Usability", "Minimalist", "Accessibility"],
+            link: "https://www.behance.net/dwfice",
         },
         {
-            title: "Weather Dashboard",
-            description: "A weather application that provides detailed forecasts and data visualization. Integrates with OpenWeatherMap API.",
-            tags: ["TypeScript", "Chart.js", "API"],
-            link: "#",
+            title: "Sixty",
+            description: "Intuitive flows help you quickly document memories and review your progress with smart summaries.",
+            tags: ["Interaction", "Research", "Vibe-Coding"],
+            link: "https://www.behance.net/dwfice",
         },
     ];
 
