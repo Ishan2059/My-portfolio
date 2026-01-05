@@ -18,7 +18,7 @@ export default function Projects() {
             title: "Sixty",
             description: "Intuitive flows help you quickly document memories and review your progress with smart summaries.",
             tags: ["Interaction", "Research", "Vibe-Coding"],
-            link: "https://www.behance.net/dwfice",
+            link: "https://www.linkedin.com/posts/ishan-mishra-b874b3287_uiuxdesign-reactnative-buildinpublic-activity-7413982695430471680-gcaS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEWptdcBR889Gk1Zb5-8-x56bz_z958FfLY",
         },
     ];
 
