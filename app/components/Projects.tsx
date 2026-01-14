@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 
 export default function Projects() {
     const projects = [
@@ -22,53 +24,109 @@ export default function Projects() {
         },
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+            },
+        },
+    };
+
+    const headerVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" as const },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" as const },
+        },
+    };
+
     return (
         <section id="projects" className="py-24">
             <div className="px-6 mx-auto max-w-7xl sm:px-12 lg:px-16">
-                <div className="max-w-2xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+                <motion.div
+                    className="max-w-2xl mx-auto text-center mb-16"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={containerVariants}
+                >
+                    <motion.h2
+                        variants={headerVariants}
+                        className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl"
+                    >
                         Featured Projects
-                    </h2>
-                    <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                    </motion.h2>
+                    <motion.p
+                        variants={headerVariants}
+                        className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400"
+                    >
                         Here are some of the projects I've worked on recently.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <motion.div
+                    className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={containerVariants}
+                >
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="flex flex-col overflow-hidden transition-all bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-lg dark:hover:border-zinc-700 group"
+                            variants={cardVariants}
+                            whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                            className="flex flex-col overflow-hidden transition-all bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-xl dark:hover:border-zinc-700 group"
                         >
                             <div className="flex-1 p-6">
-                                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                <motion.h3
+                                    className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                                >
                                     {project.title}
-                                </h3>
+                                </motion.h3>
                                 <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-6">
-                                    {project.tags.map((tag) => (
-                                        <span
+                                    {project.tags.map((tag, tagIndex) => (
+                                        <motion.span
                                             key={tag}
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: tagIndex * 0.1 }}
+                                            whileHover={{ scale: 1.1 }}
                                             className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200"
                                         >
                                             {tag}
-                                        </span>
+                                        </motion.span>
                                     ))}
                                 </div>
                             </div>
                             <div className="p-6 pt-0 mt-auto">
-                                <a
+                                <motion.a
                                     href={project.link}
+                                    whileHover={{ x: 5 }}
                                     className="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
                                 >
                                     View Project <span aria-hidden="true" className="ml-1">&rarr;</span>
-                                </a>
+                                </motion.a>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

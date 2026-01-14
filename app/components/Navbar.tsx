@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -25,8 +26,13 @@ export default function Navbar() {
     }
   };
 
+  const navItems = ["About", "Projects", "Contact"];
+
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
@@ -34,7 +40,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
+          <motion.div
+            className="flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link
               href="/"
               onClick={(e) => scrollToSection(e, "hero")}
@@ -42,27 +52,37 @@ export default function Navbar() {
             >
               Portfolio
             </Link>
-          </div>
+          </motion.div>
 
           <div className="flex items-center gap-6">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                {["About", "Projects", "Contact"].map((item) => (
-                  <a
+                {navItems.map((item, index) => (
+                  <motion.a
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={(e) => scrollToSection(e, item.toLowerCase())}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.3 }}
+                    whileHover={{ y: -2 }}
                     className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                   >
                     {item}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
-            <ThemeToggle />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <ThemeToggle />
+            </motion.div>
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
