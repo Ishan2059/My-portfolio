@@ -33,9 +33,9 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+      className={`fixed w-full z-50 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${isScrolled
+        ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">

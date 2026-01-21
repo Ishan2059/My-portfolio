@@ -88,7 +88,7 @@ export default function Projects() {
                             key={index}
                             variants={cardVariants}
                             whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                            className="flex flex-col overflow-hidden transition-all bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-xl dark:hover:border-zinc-700 group"
+                            className="flex flex-col overflow-hidden transition-[transform,background-color,border-color,box-shadow] duration-300 bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-xl dark:hover:border-zinc-700 group"
                         >
                             <div className="flex-1 p-6">
                                 <motion.h3

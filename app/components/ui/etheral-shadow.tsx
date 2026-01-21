@@ -60,7 +60,7 @@ const useInstanceId = (): string => {
     return instanceId;
 };
 
-export function EtheralShadow({
+export const EtheralShadow = React.memo(function EtheralShadow({
     sizing = 'fill',
     color,
     lightColor = 'rgba(168, 85, 247, 0.35)',  // Purple-500 with transparency
@@ -122,8 +122,13 @@ export function EtheralShadow({
                     position: "absolute",
                     inset: -displacementScale,
                     filter: animationEnabled ? `url(#${id}) blur(4px)` : "none",
-                    willChange: "filter",
-                    transform: "translateZ(0)"
+                    willChange: "filter, transform",
+                    transform: "translateZ(0) scale(1.5)",
+                    transformOrigin: "center",
+                    width: "66.66%",
+                    height: "66.66%",
+                    left: "16.66%",
+                    top: "16.66%"
                 }}
             >
                 {animationEnabled && (
@@ -132,7 +137,7 @@ export function EtheralShadow({
                             <filter id={id} colorInterpolationFilters="sRGB">
                                 <feTurbulence
                                     result="undulation"
-                                    numOctaves="2"
+                                    numOctaves="1"
                                     baseFrequency={`${mapRange(animation.scale, 0, 100, 0.001, 0.0005)},${mapRange(animation.scale, 0, 100, 0.004, 0.002)}`}
                                     seed="0"
                                     type="turbulence"
@@ -150,12 +155,6 @@ export function EtheralShadow({
                                 />
                                 <feDisplacementMap
                                     in="SourceGraphic"
-                                    in2="circulation"
-                                    scale={displacementScale}
-                                    result="dist"
-                                />
-                                <feDisplacementMap
-                                    in="dist"
                                     in2="undulation"
                                     scale={displacementScale}
                                     result="output"
@@ -193,6 +192,6 @@ export function EtheralShadow({
             )}
         </div>
     );
-}
+});
 
 export default EtheralShadow;

@@ -46,9 +46,9 @@ export default function Hero() {
             className="relative flex items-center min-h-screen overflow-hidden"
         >
             {/* Background Blobs */}
-            <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob dark:bg-purple-900 dark:opacity-30"></div>
-            <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-30"></div>
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-30"></div>
+            <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob dark:bg-purple-900 dark:opacity-30 will-change-[transform]"></div>
+            <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000 dark:bg-yellow-900 dark:opacity-30 will-change-[transform]"></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000 dark:bg-pink-900 dark:opacity-30 will-change-[transform]"></div>
 
             {/* Content Container */}
             <div className="relative w-full px-6 pt-16 pb-32 mx-auto sm:px-12 lg:px-16 max-w-7xl">
@@ -92,7 +92,7 @@ export default function Hero() {
                                 onClick={scrollToContact}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-white transition-all bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
+                                className="px-8 py-4 text-base font-bold text-white transition-[background-color,transform,shadow] bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
                             >
                                 Get in touch
                             </motion.button>
@@ -104,7 +104,7 @@ export default function Hero() {
                                 }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-zinc-900 transition-all border-2 border-zinc-200 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200"
+                                className="px-8 py-4 text-base font-bold text-zinc-900 transition-[background-color,border-color,color,transform] border-2 border-zinc-200 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200"
                             >
                                 View work
                             </motion.a>
@@ -140,7 +140,7 @@ export default function Hero() {
                                         src={theme === 'dark' ? "/profile-final.png" : "/profile-light.png"}
                                         alt="Profile Photo"
                                         fill
-                                        className={`transition-all duration-500 ${theme === 'dark'
+                                        className={`transition-[filter,transform] duration-500 ${theme === 'dark'
                                             ? 'object-contain grayscale hover:grayscale-0'
                                             : 'object-cover object-top grayscale-0 scale-85 translate-y-12'
                                             }`}

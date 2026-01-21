@@ -45,8 +45,8 @@ export default function About() {
     return (
         <section id="about" className="relative py-32 bg-zinc-50 dark:bg-zinc-900/50 overflow-hidden">
             {/* Background Blobs */}
-            <div className="absolute top-20 right-0 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob dark:bg-cyan-900 dark:opacity-30"></div>
-            <div className="absolute bottom-10 left-10 w-64 h-64 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 dark:bg-lime-900 dark:opacity-30"></div>
+            <div className="absolute top-20 right-0 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob dark:bg-cyan-900 dark:opacity-30 will-change-[transform]"></div>
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 dark:bg-lime-900 dark:opacity-30 will-change-[transform]"></div>
 
             <div className="relative px-6 mx-auto max-w-7xl sm:px-12 lg:px-16 z-10">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
