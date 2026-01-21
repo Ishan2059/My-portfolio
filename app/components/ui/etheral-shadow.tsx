@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useId, useEffect, CSSProperties } from 'react';
-import { animate, useMotionValue, AnimationPlaybackControls } from 'framer-motion';
+import { animate, useMotionValue, AnimationPlaybackControls, motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 
 // Type definitions
@@ -73,8 +73,7 @@ export function EtheralShadow({
     const id = useInstanceId();
     const { resolvedTheme } = useTheme();
     const animationEnabled = animation && animation.scale > 0;
-    const feColorMatrixRef = useRef<SVGFEColorMatrixElement>(null);
-    const hueRotateMotionValue = useMotionValue(180);
+    const hueRotateMotionValue = useMotionValue(0);
     const hueRotateAnimation = useRef<AnimationPlaybackControls | null>(null);
 
     // Use explicit color if provided, otherwise use theme-aware colors
@@ -84,23 +83,16 @@ export function EtheralShadow({
     const animationDuration = animation ? mapRange(animation.speed, 1, 100, 1000, 50) : 1;
 
     useEffect(() => {
-        if (feColorMatrixRef.current && animationEnabled) {
+        if (animationEnabled) {
             if (hueRotateAnimation.current) {
                 hueRotateAnimation.current.stop();
             }
-            hueRotateMotionValue.set(0);
-            hueRotateAnimation.current = animate(hueRotateMotionValue, 360, {
+
+            hueRotateAnimation.current = animate(hueRotateMotionValue, [0, 360], {
                 duration: animationDuration / 25,
                 repeat: Infinity,
                 repeatType: "loop",
-                repeatDelay: 0,
                 ease: "linear",
-                delay: 0,
-                onUpdate: (value: number) => {
-                    if (feColorMatrixRef.current) {
-                        feColorMatrixRef.current.setAttribute("values", String(value));
-                    }
-                }
             });
 
             return () => {
@@ -119,6 +111,9 @@ export function EtheralShadow({
                 position: "relative",
                 width: "100%",
                 height: "100%",
+                backfaceVisibility: "hidden",
+                transform: "translateZ(0)",
+                willChange: "transform",
                 ...style
             }}
         >
@@ -126,13 +121,15 @@ export function EtheralShadow({
                 style={{
                     position: "absolute",
                     inset: -displacementScale,
-                    filter: animationEnabled ? `url(#${id}) blur(4px)` : "none"
+                    filter: animationEnabled ? `url(#${id}) blur(4px)` : "none",
+                    willChange: "filter",
+                    transform: "translateZ(0)"
                 }}
             >
                 {animationEnabled && (
-                    <svg style={{ position: "absolute" }}>
+                    <svg style={{ position: "absolute", width: 0, height: 0 }}>
                         <defs>
-                            <filter id={id}>
+                            <filter id={id} colorInterpolationFilters="sRGB">
                                 <feTurbulence
                                     result="undulation"
                                     numOctaves="2"
@@ -140,11 +137,10 @@ export function EtheralShadow({
                                     seed="0"
                                     type="turbulence"
                                 />
-                                <feColorMatrix
-                                    ref={feColorMatrixRef}
+                                <motion.feColorMatrix
                                     in="undulation"
                                     type="hueRotate"
-                                    values="180"
+                                    values={hueRotateMotionValue as any}
                                 />
                                 <feColorMatrix
                                     in="dist"
@@ -177,7 +173,8 @@ export function EtheralShadow({
                         maskPosition: "center",
                         width: "100%",
                         height: "100%",
-                        transition: "background-color 0.3s ease"
+                        transition: "background-color 0.3s ease",
+                        willChange: "background-color"
                     }}
                 />
             </div>
