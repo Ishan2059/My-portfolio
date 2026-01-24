@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 
 export default function Contact() {
     const containerVariants = {
@@ -50,16 +51,27 @@ export default function Contact() {
                     >
                         I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
                     </motion.p>
-                    <motion.div variants={itemVariants} className="mt-10 flex items-center justify-center gap-6">
+                    <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                         <motion.a
                             href="mailto:ishanmishra2059@gmail.com"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+                            className="w-full sm:w-auto text-center rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 transition-colors duration-200"
                         >
                             Say Hello
                         </motion.a>
+                        <motion.a
+                            href="/Ishan_Mishra_Resume.pdf"
+                            download="Ishan_Mishra_Resume.pdf"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
+                        >
+                            <Download className="w-4 h-4" />
+                            Download Resume
+                        </motion.a>
                     </motion.div>
+
                     <motion.div
                         variants={itemVariants}
                         className="mt-12 flex justify-center gap-8"
