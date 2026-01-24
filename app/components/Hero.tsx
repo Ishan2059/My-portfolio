@@ -92,7 +92,7 @@ export default function Hero() {
                                 onClick={scrollToContact}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-white transition-[background-color,transform,shadow] bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
+                                className="px-8 py-4 text-base font-bold text-white transition-[background-color,transform,shadow] bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 cursor-pointer"
                             >
                                 Get in touch
                             </motion.button>
@@ -104,7 +104,7 @@ export default function Hero() {
                                 }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-zinc-900 transition-[background-color,border-color,color,transform] border-2 border-zinc-200 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200"
+                                className="px-8 py-4 text-base font-bold text-zinc-900 transition-[background-color,border-color,color,transform] border-2 border-zinc-200 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200 cursor-pointer"
                             >
                                 View work
                             </motion.a>
@@ -154,7 +154,7 @@ export default function Hero() {
             </div>
 
             {/* Background decoration */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 rounded-full blur-3xl -z-10 pointer-events-none" />
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 rounded-full blur-3xl -z-10 pointer-events-none" />
             <div className="absolute bottom-0 left-0 -translate-x-1/4 translate-y-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-3xl -z-10 pointer-events-none" />
 
             {/* Cloud/Wave Divider */}

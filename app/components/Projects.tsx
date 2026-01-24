@@ -92,7 +92,7 @@ export default function Projects() {
                         >
                             <div className="flex-1 p-6">
                                 <motion.h3
-                                    className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                                    className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
                                 >
                                     {project.title}
                                 </motion.h3>
@@ -108,7 +108,7 @@ export default function Projects() {
                                             viewport={{ once: true }}
                                             transition={{ delay: tagIndex * 0.1 }}
                                             whileHover={{ scale: 1.1 }}
-                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200"
+                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300"
                                         >
                                             {tag}
                                         </motion.span>
@@ -119,7 +119,7 @@ export default function Projects() {
                                 <motion.a
                                     href={project.link}
                                     whileHover={{ x: 5 }}
-                                    className="inline-flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
+                                    className="inline-flex items-center text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 cursor-pointer"
                                 >
                                     View Project <span aria-hidden="true" className="ml-1">&rarr;</span>
                                 </motion.a>

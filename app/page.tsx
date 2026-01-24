@@ -10,7 +10,7 @@ import { EtheralShadow } from "./components/ui/etheral-shadow";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-white dark:bg-black font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="relative flex flex-col min-h-screen bg-white dark:bg-black font-sans selection:bg-purple-500 selection:text-white">
       {/* Fixed Ethereal Shadow Background */}
       <div className="fixed inset-0 z-0 opacity-50 pointer-events-none">
         <EtheralShadow
