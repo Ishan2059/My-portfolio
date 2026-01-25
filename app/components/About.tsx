@@ -100,8 +100,7 @@ export default function About() {
                                     key={skill}
                                     variants={skillVariants}
                                     custom={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="flex items-center px-4 py-3 text-sm font-medium text-zinc-700 bg-white/80 backdrop-blur-sm border border-zinc-200 rounded-lg dark:bg-zinc-800/80 dark:border-zinc-700 dark:text-zinc-300 shadow-sm transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-400"
+                                    className="flex items-center px-4 py-3 text-sm font-medium text-zinc-700 bg-white/80 backdrop-blur-sm border border-zinc-200 rounded-lg dark:bg-zinc-800/80 dark:border-zinc-700 dark:text-zinc-300 shadow-sm transition-all duration-200 hover:scale-105 hover:border-purple-500 dark:hover:border-purple-400 cursor-pointer"
                                 >
                                     <motion.span
                                         className="w-2 h-2 mr-3 bg-purple-500 rounded-full"

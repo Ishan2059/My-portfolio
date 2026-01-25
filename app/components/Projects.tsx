@@ -87,42 +87,33 @@ export default function Projects() {
                         <motion.div
                             key={index}
                             variants={cardVariants}
-                            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                            className="flex flex-col overflow-hidden transition-[transform,background-color,border-color,box-shadow] duration-300 bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-xl dark:hover:border-zinc-700 group"
+                            className="flex flex-col overflow-hidden transition-[transform,background-color,border-color,box-shadow] duration-200 bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-xl hover:-translate-y-2 dark:hover:border-zinc-700 group"
                         >
                             <div className="flex-1 p-6">
-                                <motion.h3
-                                    className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
-                                >
+                                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
                                     {project.title}
-                                </motion.h3>
+                                </h3>
                                 <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
                                     {project.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-6">
-                                    {project.tags.map((tag, tagIndex) => (
-                                        <motion.span
+                                    {project.tags.map((tag) => (
+                                        <span
                                             key={tag}
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: tagIndex * 0.1 }}
-                                            whileHover={{ scale: 1.1 }}
-                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300"
+                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 transition-transform duration-200 hover:scale-110"
                                         >
                                             {tag}
-                                        </motion.span>
+                                        </span>
                                     ))}
                                 </div>
                             </div>
                             <div className="p-6 pt-0 mt-auto">
-                                <motion.a
+                                <a
                                     href={project.link}
-                                    whileHover={{ x: 5 }}
-                                    className="inline-flex items-center text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 cursor-pointer"
+                                    className="inline-flex items-center text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 transition-all duration-200 hover:translate-x-1 cursor-pointer"
                                 >
                                     View Project <span aria-hidden="true" className="ml-1">&rarr;</span>
-                                </motion.a>
+                                </a>
                             </div>
                         </motion.div>
                     ))}
