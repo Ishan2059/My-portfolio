@@ -85,7 +85,7 @@ export default function Hero() {
                             variants={itemVariants}
                             className="max-w-xl mb-10 text-lg text-zinc-600 dark:text-zinc-400 sm:text-xl leading-relaxed"
                         >
-                            I'm a UI/UX Designer who translates complex problems into intuitive, comfortable digital experiences. My focus is on Human-Centered design, ensuring every pixel serves a purpose.
+                            Hi, I'm Ishan, a UI/UX Designer who translates complex problems into intuitive, comfortable digital experiences. My focus is on Human-Centered design, ensuring every pixel serves a purpose.
                         </motion.p>
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
                             <motion.button
