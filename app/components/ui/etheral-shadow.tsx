@@ -72,12 +72,17 @@ export const EtheralShadow = React.memo(function EtheralShadow({
 }: EtheralShadowProps) {
     const id = useInstanceId();
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = React.useState(false);
     const animationEnabled = animation && animation.scale > 0;
     const hueRotateMotionValue = useMotionValue(0);
     const hueRotateAnimation = useRef<AnimationPlaybackControls | null>(null);
 
-    // Use explicit color if provided, otherwise use theme-aware colors
-    const effectiveColor = color ?? (resolvedTheme === 'dark' ? darkColor : lightColor);
+    // Ensure hydration matches by defaulting to light color on server
+    const effectiveColor = color ?? (mounted && resolvedTheme === 'dark' ? darkColor : lightColor);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const displacementScale = animation ? mapRange(animation.scale, 1, 100, 20, 100) : 0;
     const animationDuration = animation ? mapRange(animation.speed, 1, 100, 1000, 50) : 1;
