@@ -104,7 +104,7 @@ export default function Hero() {
                                 }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-zinc-900 transition-[background-color,border-color,color,transform] border-2 border-zinc-200 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200 cursor-pointer"
+                                className="flex items-center justify-center px-8 py-4 text-base font-bold text-zinc-900 transition-[background-color,border-color,color,transform] border-2 border-zinc-900 rounded-full hover:bg-zinc-50 hover:border-purple-500 hover:text-purple-600 dark:text-zinc-100 dark:border-zinc-100 dark:hover:bg-zinc-900 dark:hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-200 cursor-pointer"
                             >
                                 View work
                             </motion.a>
