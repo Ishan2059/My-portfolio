@@ -57,8 +57,8 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed w-full z-50 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${isScrolled
-        ? "bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm"
+      className={`fixed w-full z-50 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${isScrolled || isMobileMenuOpen
+        ? "bg-white dark:bg-black shadow-sm"
         : "bg-transparent"
         }`}
     >
