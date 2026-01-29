@@ -178,7 +178,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Images Section - F-Pattern: Visual break with grid */}
                 {study.images.length > 0 && (
                     <motion.section
-                        className="px-6 mx-auto max-w-7xl sm:px-12 lg:px-16 mb-16"
+                        className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -189,8 +189,8 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                             <div className="w-20 h-1 bg-purple-600"></div>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            {study.images.slice(0, 8).map((image, index) => (
+                        <div className="grid grid-cols-2 gap-6 max-w-2xl">
+                            {study.images.slice(0, 4).map((image, index) => (
                                 <motion.div
                                     key={index}
                                     variants={fadeInUp}
