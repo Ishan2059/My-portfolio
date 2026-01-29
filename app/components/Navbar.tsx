@@ -22,14 +22,30 @@ export default function Navbar() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
+    
+    // If it's Case Studies, navigate to the case studies page
+    if (id.toLowerCase() === "case-studies") {
+      window.location.href = "/case-studies";
+      return;
+    }
+    
+    // Check if we're on the home page
+    if (window.location.pathname !== "/") {
+      // Navigate to home page with hash
+      window.location.href = `/#${id.toLowerCase().replace(/\s+/g, '-')}`;
+      return;
+    }
+    
+    // Convert to section ID format
+    const sectionId = id.toLowerCase().replace(/\s+/g, '-');
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = ["About", "Projects", "Contact"];
+  const navItems = ["About", "Projects", "Case Studies", "Contact"];
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -84,8 +100,8 @@ export default function Navbar() {
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
-                    onClick={(e) => scrollToSection(e, item.toLowerCase())}
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                    onClick={(e) => scrollToSection(e, item)}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
@@ -137,8 +153,8 @@ export default function Navbar() {
                 {navItems.map((item) => (
                   <motion.a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
-                    onClick={(e) => scrollToSection(e, item.toLowerCase())}
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                    onClick={(e) => scrollToSection(e, item)}
                     variants={itemVariants}
                     className="px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800"
                   >
