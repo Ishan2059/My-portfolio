@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X, ArrowRight } from "lucide-react";
@@ -12,6 +13,18 @@ interface CaseStudiesModalProps {
 
 export default function CaseStudiesModal({ isOpen, onClose }: CaseStudiesModalProps) {
     const availableStudies = caseStudies.filter((study) => study.available);
+
+    // Prevent background scroll when modal is open
+    React.useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
