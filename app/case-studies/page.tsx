@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
                             Case Studies
                         </h1>
                         <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 mb-8">
-                            Deep dives into my design process and problem-solving approach. Each project showcases how I translate complex challenges into intuitive, user-centered solutions.
+                            Deep dives into my design process and problem-solving approach. Each case study showcases how I translate complex challenges into intuitive, user-centered solutions.
                         </p>
                         <div className="w-16 h-1 bg-purple-600 mx-auto mb-4"></div>
                         <p className="text-sm text-zinc-500 dark:text-zinc-500">

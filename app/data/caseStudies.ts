@@ -88,21 +88,52 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: "ecommerce-redesign",
-        title: "E-Commerce Platform Redesign",
-        shortDescription: "Reimagining the shopping experience with a focus on conversion optimization and user engagement.",
-        valueTitle: "Increasing Checkout Conversions by 22% for a Himalayan E-commerce App",
-        role: "Lead Product Designer",
-        timeline: "Coming Soon",
-        platform: "Web & Mobile",
-        tags: ["UI/UX Design", "E-Commerce", "Web Design", "Coming Soon"],
-        tools: ["Figma", "Adobe XD", "Principle"],
-        problem: "Coming soon",
-        solution: "Coming soon",
-        keyInsight: "Coming soon",
-        process: [],
-        results: [],
+        title: "Game Flow Mapping",
+        shortDescription: "Resolving client-team misalignment through structured game flow mapping across 3 game modes.",
+        valueTitle: "Resolving Client-Team Misalignment Through Structured Game Flow Mapping",
+        role: "Product Designer",
+        timeline: "~4 Hours",
+        platform: "Mobile Game (3 Game Modes)",
+        tags: ["Product Design", "Flow Mapping", "Collaboration", "Mobile Game"],
+        tools: ["FigJam", "Figma"],
+        
+        problem: "When a client returned to an already-completed mobile game project with change requests, the team struggled to align on what exactly needed to change. Miscommunication was slowing the project down, and the client — sensing the disconnect — asked the team to document their current understanding so the gaps could be identified before the next meeting.",
+        
+        solution: "I created a comprehensive game flow in FigJam, broken down across all 3 game modes. Each mode was mapped into three clear phases — Before Gameplay, During Gameplay, and After Gameplay — giving both the team and the client a single, easy-to-follow reference. This structure made it simple for the client to pinpoint exactly where the team's understanding diverged from their expectations.",
+        
+        keyInsight: "The confusion wasn't about the changes themselves — it was about the lack of a shared reference point. The team and the client were interpreting the same requirements differently because no one had mapped out the full picture. A structured, visual flow would give everyone the same starting point.",
+        
+        process: [
+            {
+                step: "Understanding",
+                description: "I reviewed the client's document carefully to extract the expected behavior for each game mode, then cross-referenced it with the existing Figma design to understand the current state of the product.",
+                outcome: "Built a clear mental model of the gap between what was built and what the client expected."
+            },
+            {
+                step: "Structuring",
+                description: "Rather than mapping the flow as one single stream, I divided each game mode into three phases — Before, During, and After Gameplay. This made the flow digestible and easy to scan, especially for the client who needed to quickly spot discrepancies.",
+                outcome: "Created a framework that worked across all 3 game modes consistently, reducing ambiguity."
+            },
+            {
+                step: "Mapping & Implementation",
+                description: "I built the full flow in FigJam and then carried the understanding into the existing Figma design, ensuring the team could see how the flow connected to the actual product.",
+                outcome: "Gave the team and client a shared visual reference to align on before the Tuesday meeting."
+            }
+        ],
+        
+        results: [
+            {
+                metric: "Alignment",
+                value: "-"
+            },
+            {
+                metric: "Impact",
+                value: "-"
+            }
+        ],
+        
         images: [],
-        available: false,
+        available: true,
     },
     {
         id: "fintech-dashboard",
