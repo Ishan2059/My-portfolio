@@ -115,7 +115,7 @@ export default function Hero() {
                         className="relative z-10 flex justify-center lg:w-1/2 lg:justify-end lg:-mt-16 lg:-mr-12"
                         initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
                     >
                         {mounted && (
                             <a
@@ -136,16 +136,25 @@ export default function Hero() {
                                             : 'linear-gradient(to bottom, black 80%, transparent 100%)'
                                     }}
                                 >
+                                <motion.div
+                                    className="relative w-full h-full"
+                                    key={theme}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                >
                                     <Image
                                         src={theme === 'dark' ? "/profile-final.png" : "/profile-light.png"}
                                         alt="Profile Photo"
                                         fill
-                                        className={`transition-[filter,transform] duration-500 ${theme === 'dark'
+                                        className={`transition-[filter,transform,opacity] duration-300 ${theme === 'dark'
                                             ? 'object-contain grayscale hover:grayscale-0'
                                             : 'object-cover object-top grayscale-0 scale-85 translate-y-12'
                                             }`}
                                         priority
+                                        key={theme}
                                     />
+                                </motion.div>
                                 </motion.div>
                             </a>
                         )}
