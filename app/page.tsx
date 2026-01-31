@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen bg-white dark:bg-black font-sans selection:bg-purple-500 selection:text-white">
       {/* Fixed Ethereal Shadow Background - Hidden on mobile for performance */}
-      <div className="hidden md:block fixed inset-0 z-0 opacity-50 pointer-events-none">
+      <div className="hidden md:block fixed inset-0 z-0 opacity-30 pointer-events-none">
         <EtheralShadow
-          animation={{ scale: 60, speed: 70 }}
-          noise={{ opacity: 0.4, scale: 1.2 }}
+          animation={{ scale: 40, speed: 30 }}
+          noise={{ opacity: 0.2, scale: 0.8 }}
           sizing="fill"
         />
       </div>
