@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" });
 
 export const metadata: Metadata = {
   title: "My Portfolio | Product Designer",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased text-zinc-900 dark:text-zinc-50`}>
+      <body className={`${spaceGrotesk.variable} ${plusJakarta.variable} font-sans antialiased text-zinc-900 dark:text-zinc-50`}>
         <Providers>{children}</Providers>
       </body>
     </html>

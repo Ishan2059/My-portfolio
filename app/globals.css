@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-space-grotesk);
 }
 
 /* Force dark mode to work with class="dark" */
@@ -145,4 +146,10 @@ body {
 ::selection {
   background-color: #a855f7;
   color: white;
+}
+
+/* Apply Space Grotesk to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk);
+  letter-spacing: -0.03em;
 }
