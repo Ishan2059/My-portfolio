@@ -43,7 +43,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                     variants={fadeInUp}
                 >
                     <div className="max-w-4xl">
-                        <h1 className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl md:text-7xl mb-8 leading-tight">
+                        <h1 className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl md:text-7xl mb-8 leading-snug sm:leading-tight">
                             {study.valueTitle}
                         </h1>
                         
