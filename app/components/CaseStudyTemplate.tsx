@@ -54,6 +54,12 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                             <div><span className="font-semibold text-zinc-900 dark:text-zinc-100">Platform:</span> {study.platform}</div>
                         </div>
 
+                        {/* Date Info */}
+                        <div className="flex flex-wrap gap-8 text-sm text-zinc-500 dark:text-zinc-500 mb-12">
+                            <div><span className="font-medium text-zinc-700 dark:text-zinc-400">Uploaded:</span> {study.dateUploaded}</div>
+                            <div><span className="font-medium text-zinc-700 dark:text-zinc-400">Updated:</span> {study.dateUpdated}</div>
+                        </div>
+
                         <div className="flex flex-wrap gap-3">
                             {study.tools.map((tool) => (
                                 <span

@@ -25,6 +25,8 @@ export interface CaseStudy {
     
     images: string[];
     available: boolean;
+    dateUploaded: string;
+    dateUpdated: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -85,6 +87,8 @@ export const caseStudies: CaseStudy[] = [
             "WhatsApp Image 2025-12-26 at 20.59.03.jpeg",
         ],
         available: true,
+        dateUploaded: "Jan 28, 2026",
+        dateUpdated: "Jan 29, 2026",
     },
     {
         id: "ecommerce-redesign",
@@ -134,6 +138,8 @@ export const caseStudies: CaseStudy[] = [
         
         images: [],
         available: true,
+        dateUploaded: "Jan 31, 2026",
+        dateUpdated: "Jan 31, 2026",
     },
     {
         id: "fintech-dashboard",
@@ -152,6 +158,8 @@ export const caseStudies: CaseStudy[] = [
         results: [],
         images: [],
         available: false,
+        dateUploaded: "",
+        dateUpdated: "",
     },
 ];
 
