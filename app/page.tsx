@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import CaseStudies from "./components/CaseStudies";
+import DesignSystem from "./components/DesignSystem";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { EtheralShadow } from "./components/ui/etheral-shadow";
@@ -29,6 +30,7 @@ export default function Home() {
           <About />
           <CaseStudies />
           <Projects />
+          <DesignSystem />
           <Contact />
         </main>
         <Footer />
