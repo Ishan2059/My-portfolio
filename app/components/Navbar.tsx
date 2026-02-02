@@ -45,7 +45,7 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = ["About", "Projects", "Case Studies", "Contact"];
+  const navItems = ["About", "Projects", "Case Studies", "Design System", "Contact"];
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
