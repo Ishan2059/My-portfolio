@@ -26,8 +26,17 @@ export interface CaseStudy {
     images: string[];
     available: boolean;
     dateUploaded: string;
-    dateUpdated: string;
+    dateUpdated?: string; // Optional - will auto-generate if not provided
 }
+
+// Helper function to format date
+const formatDate = (date: Date): string => {
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+};
+
+// Helper function to get today's date
+const getToday = (): string => formatDate(new Date());
 
 export const caseStudies: CaseStudy[] = [
     {
@@ -91,7 +100,7 @@ export const caseStudies: CaseStudy[] = [
         dateUpdated: "Jan 29, 2026",
     },
     {
-        id: "ecommerce-redesign",
+        id: "game-flow-mapping",
         title: "Game Flow Mapping",
         shortDescription: "Resolving client-team misalignment through structured game flow mapping across 3 game modes.",
         valueTitle: "Resolving Client-Team Misalignment Through Structured Game Flow Mapping",
@@ -127,19 +136,23 @@ export const caseStudies: CaseStudy[] = [
         
         results: [
             {
-                metric: "Alignment",
-                value: "-"
+                metric: "Communication Gap",
+                value: "Eliminated"
             },
             {
-                metric: "Impact",
-                value: "-"
+                metric: "Alignment",
+                value: "100% Achieved"
+            },
+            {
+                metric: "Stakeholder Satisfaction",
+                value: "Client & Team Happy"
             }
         ],
         
         images: [],
         available: true,
         dateUploaded: "Jan 31, 2026",
-        dateUpdated: "Jan 31, 2026",
+        dateUpdated: getToday(),
     },
     {
         id: "fintech-dashboard",
