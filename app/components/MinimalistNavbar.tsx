@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 // Helper component for navigation links
@@ -29,6 +29,16 @@ export default function MinimalistNavbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Prevent background scrolling while the drawer is open
+    if (!isMobileMenuOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -62,18 +72,6 @@ export default function MinimalistNavbar() {
     { label: 'CASE STUDIES', href: '/case-studies', id: 'case-studies' },
     { label: 'CONTACT', href: '#contact', id: 'contact' },
   ];
-
-  const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-    exit: { opacity: 0, y: -20 },
-  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -132,46 +130,56 @@ export default function MinimalistNavbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex flex-col space-y-1.5 md:hidden"
+            className="relative z-[120] md:hidden inline-flex items-center justify-center rounded-lg p-2 text-foreground"
             aria-label="Open menu"
           >
-            {isMobileMenuOpen ? (
-              <X size={24} className="text-foreground" />
-            ) : (
-              <>
-                <span className="block h-0.5 w-6 bg-foreground"></span>
-                <span className="block h-0.5 w-6 bg-foreground"></span>
-                <span className="block h-0.5 w-5 bg-foreground"></span>
-              </>
-            )}
+            {isMobileMenuOpen ? <X size={22} className="text-foreground" /> : <Menu size={22} className="text-foreground" />}
           </motion.button>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Side Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="md:hidden pb-4 border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-black/95 backdrop-blur-md"
-          >
-            <div className="flex flex-col space-y-2 pt-4 px-4 sm:px-8">
-              {navLinks.map((link) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.id)}
-                  variants={itemVariants}
-                  className="px-4 py-2 font-medium text-foreground/70 hover:text-foreground transition-colors rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 uppercase text-xs tracking-widest"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 z-[110] bg-black/30 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.aside
+              className="fixed left-0 top-0 bottom-0 z-[115] w-[280px] max-w-[85vw] bg-white/95 dark:bg-black/95 backdrop-blur-md border-r border-zinc-200 dark:border-zinc-800"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -20, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+            >
+              <div className="flex items-center justify-between px-4 pt-6 pb-4">
+                <div className="text-lg font-bold tracking-wider">
+                  <span className="text-foreground">Ishan.</span>
+                </div>
+              </div>
+
+              <nav className="flex flex-col gap-2 px-4 pb-6">
+                {navLinks.map((link) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.id)}
+                    variants={itemVariants}
+                    className="px-4 py-3 font-medium text-foreground/80 hover:text-foreground transition-colors rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 uppercase text-xs tracking-widest"
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>
