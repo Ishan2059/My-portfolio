@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
             <main className="flex-grow pt-24">
                 {/* Hero Section */}
                 <motion.section
-                    className="px-16 mx-auto max-w-4xl mb-20"
+                    className="px-4 sm:px-6 md:px-16 mx-auto max-w-4xl mb-20"
                     initial="hidden"
                     animate="visible"
                     variants={headerVariants}
@@ -182,7 +182,7 @@ export default function CaseStudiesPage() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                    <section className="px-16 mx-auto max-w-6xl mb-16">
+                    <section className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16">
                         <div className="flex items-center justify-center gap-4">
                             <button
                                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}

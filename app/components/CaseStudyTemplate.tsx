@@ -37,7 +37,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
             <main className="flex-grow pt-24">
                 {/* Hero Section - F-Pattern: Strong horizontal line at top */}
                 <motion.section
-                    className="px-16 mx-auto max-w-6xl mb-16"
+                    className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
@@ -75,7 +75,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Problem Section - F-Pattern: Left-aligned content */}
                 <motion.section
-                    className="px-16 mx-auto max-w-6xl mb-16"
+                    className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -92,7 +92,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Key Insight Section - F-Pattern: Highlighted content block */}
                 <motion.section
-                    className="px-16 mx-auto max-w-6xl mb-16"
+                    className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -119,7 +119,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Solution Section - F-Pattern: Left-aligned content */}
                 <motion.section
-                    className="px-16 mx-auto max-w-6xl mb-16"
+                    className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -137,7 +137,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Process Section - F-Pattern: Vertical scanning with left alignment */}
                 {study.process.length > 0 && (
                     <motion.section
-                        className="px-16 mx-auto max-w-6xl mb-16"
+                        className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -184,7 +184,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Images Section - F-Pattern: Visual break with grid */}
                 {study.images.length > 0 && (
                     <motion.section
-                        className="px-16 mx-auto max-w-6xl mb-16"
+                        className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -216,7 +216,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Results Section - F-Pattern: Final horizontal scan */}
                 {study.results.length > 0 && (
                     <motion.section
-                        className="px-16 mx-auto max-w-6xl mb-16"
+                        className="px-4 sm:px-6 md:px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}

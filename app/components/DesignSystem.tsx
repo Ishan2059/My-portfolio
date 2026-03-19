@@ -26,7 +26,7 @@ export default function DesignSystem() {
 
     return (
         <section id="design-system" className="py-24 bg-white dark:bg-black">
-            <div className="px-16 mx-auto max-w-7xl">
+            <div className="px-4 sm:px-6 md:px-16 mx-auto max-w-7xl">
                 <motion.div
                     className="max-w-4xl mx-auto text-center"
                     initial="hidden"

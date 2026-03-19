@@ -96,7 +96,7 @@ export default function MinimalistNavbar() {
       }`}
     >
       {/* Header */}
-      <header className="z-30 flex w-full max-w-7xl mx-auto items-center justify-between py-4 px-16">
+      <header className="z-30 flex w-full max-w-7xl mx-auto items-center justify-between py-4 px-4 sm:px-8 md:px-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -158,7 +158,7 @@ export default function MinimalistNavbar() {
             exit="exit"
             className="md:hidden pb-4 border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-black/95 backdrop-blur-md"
           >
-            <div className="flex flex-col space-y-2 pt-4 px-16">
+            <div className="flex flex-col space-y-2 pt-4 px-4 sm:px-8">
               {navLinks.map((link) => (
                 <motion.a
                   key={link.label}

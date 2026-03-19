@@ -78,7 +78,7 @@ export default function Navbar() {
       {/* Curved top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-red-500 to-red-500 rounded-b-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
         <div className="flex items-center justify-between h-16 pt-4">
           <motion.div
             className="flex-shrink-0"

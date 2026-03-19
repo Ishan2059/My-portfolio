@@ -10,6 +10,10 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-pl
 export const metadata: Metadata = {
   title: "My Portfolio | Product Designer",
   description: "Portfolio of a product designer specializing in building exceptional digital experiences.",
+    viewport: {
+        width: "device-width",
+        initialScale: 1,
+    },
   icons: {
     icon: "/favicon.ico",
   },
