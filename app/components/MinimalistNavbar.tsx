@@ -130,10 +130,14 @@ export default function MinimalistNavbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative z-[120] md:hidden inline-flex items-center justify-center rounded-lg p-2 text-foreground"
+            className="relative z-[130] md:hidden inline-flex items-center justify-center rounded-lg p-2 bg-white/85 dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 backdrop-blur-sm text-zinc-900 dark:text-zinc-50"
             aria-label="Open menu"
           >
-            {isMobileMenuOpen ? <X size={22} className="text-foreground" /> : <Menu size={22} className="text-foreground" />}
+            {isMobileMenuOpen ? (
+              <X size={26} className="text-current" strokeWidth={2} />
+            ) : (
+              <Menu size={26} className="text-current" strokeWidth={2} />
+            )}
           </motion.button>
         </div>
       </header>
