@@ -60,7 +60,7 @@ export default function Contact() {
                                 background="var(--primary)"
                                 borderRadius="0.75rem"
                                 shimmerColor="#ffffff"
-                                className="w-full sm:w-auto text-center px-8 py-3.5 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:focus-visible:outline-zinc-100 transition-colors duration-200"
+                                className="w-full sm:w-auto text-center px-8 py-3.5 text-sm font-semibold shadow-sm min-h-12 border-2 border-zinc-900 dark:border-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:focus-visible:outline-zinc-100 transition-colors duration-200"
                                 onClick={() => window.location.href = "mailto:ishanmishra2059@gmail.com"}
                             >
                                 Say Hello
@@ -71,7 +71,7 @@ export default function Contact() {
                             download="Ishan_Mishra_Resume.pdf"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-zinc-900 bg-transparent px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900 transition-all duration-200 cursor-pointer"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-zinc-900 bg-transparent px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-sm min-h-12 hover:bg-zinc-50 dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900 transition-all duration-200 cursor-pointer"
                         >
                             <Download className="w-4 h-4" />
                             Download Resume
