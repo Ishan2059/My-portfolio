@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/app/components/Navbar";
+import MinimalistNavbar from "@/app/components/MinimalistNavbar";
 import Footer from "@/app/components/Footer";
 import { CaseStudy } from "@/app/data/caseStudies";
 import { Lightbulb, TrendingUp } from "lucide-react";
@@ -32,12 +32,12 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
     return (
         <div className="relative flex flex-col min-h-screen bg-white dark:bg-black">
-            <Navbar />
+            <MinimalistNavbar />
 
             <main className="flex-grow pt-24">
                 {/* Hero Section - F-Pattern: Strong horizontal line at top */}
                 <motion.section
-                    className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                    className="px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
@@ -64,7 +64,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                             {study.tools.map((tool) => (
                                 <span
                                     key={tool}
-                                    className="px-4 py-2 text-sm font-medium bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 rounded-full"
+                                    className="px-4 py-2 text-sm font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 rounded-full"
                                 >
                                     {tool}
                                 </span>
@@ -75,7 +75,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Problem Section - F-Pattern: Left-aligned content */}
                 <motion.section
-                    className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                    className="px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -83,7 +83,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 >
                     <div className="max-w-4xl">
                         <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">The Problem</h2>
-                        <div className="w-20 h-1 bg-purple-600 mb-8"></div>
+                        <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100 mb-8"></div>
                         <p className="text-xl leading-relaxed text-zinc-700 dark:text-zinc-300">
                             {study.problem}
                         </p>
@@ -92,18 +92,18 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Key Insight Section - F-Pattern: Highlighted content block */}
                 <motion.section
-                    className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                    className="px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={fadeInUp}
                 >
                     <div className="max-w-4xl">
-                        <div className="bg-purple-50 dark:bg-purple-900/10 p-8 rounded-2xl border-l-4 border-purple-600">
+                        <div className="bg-zinc-50 dark:bg-zinc-900 p-8 rounded-xl border-l-4 border-zinc-900 dark:border-zinc-100">
                             <div className="flex items-start gap-4">
                                 <div className="flex-shrink-0">
-                                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-                                        <Lightbulb className="w-5 h-5 text-white" />
+                                    <div className="w-10 h-10 bg-zinc-900 dark:bg-zinc-100 rounded-full flex items-center justify-center">
+                                        <Lightbulb className="w-5 h-5 text-white dark:text-zinc-900" />
                                     </div>
                                 </div>
                                 <div>
@@ -119,7 +119,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
 
                 {/* Solution Section - F-Pattern: Left-aligned content */}
                 <motion.section
-                    className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                    className="px-16 mx-auto max-w-6xl mb-16"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
@@ -127,7 +127,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 >
                     <div className="max-w-4xl">
                         <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">The Solution</h2>
-                        <div className="w-20 h-1 bg-purple-600 mb-8"></div>
+                        <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100 mb-8"></div>
                         <p className="text-xl leading-relaxed text-zinc-700 dark:text-zinc-300">
                             {study.solution}
                         </p>
@@ -137,7 +137,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Process Section - F-Pattern: Vertical scanning with left alignment */}
                 {study.process.length > 0 && (
                     <motion.section
-                        className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                        className="px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -145,7 +145,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                     >
                         <div className="max-w-4xl">
                             <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Process</h2>
-                            <div className="w-20 h-1 bg-purple-600 mb-12"></div>
+                            <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100 mb-12"></div>
 
                             <div className="space-y-12">
                                 {study.process.map((step, index) => (
@@ -156,7 +156,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                     >
                                         <div className="flex items-start gap-8">
                                             <div className="flex-shrink-0 relative z-10">
-                                                <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                                                <div className="w-12 h-12 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                                                     {index + 1}
                                                 </div>
                                             </div>
@@ -169,7 +169,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                                 </p>
                                                 <div className="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
                                                     <p className="text-base font-medium text-zinc-900 dark:text-zinc-100">
-                                                        <span className="text-purple-600 dark:text-purple-400 font-semibold">Outcome:</span> {step.outcome}
+                                                        <span className="text-zinc-900 dark:text-zinc-100 font-semibold">Outcome:</span> {step.outcome}
                                                     </p>
                                                 </div>
                                             </div>
@@ -184,7 +184,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Images Section - F-Pattern: Visual break with grid */}
                 {study.images.length > 0 && (
                     <motion.section
-                        className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                        className="px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -192,7 +192,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                     >
                         <div className="max-w-4xl mb-12">
                             <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Design Showcase</h2>
-                            <div className="w-20 h-1 bg-purple-600"></div>
+                            <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100"></div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-6 max-w-2xl">
@@ -216,7 +216,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                 {/* Results Section - F-Pattern: Final horizontal scan */}
                 {study.results.length > 0 && (
                     <motion.section
-                        className="px-6 mx-auto max-w-6xl sm:px-12 lg:px-16 mb-16"
+                        className="px-16 mx-auto max-w-6xl mb-16"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -224,17 +224,17 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                     >
                         <div className="max-w-4xl">
                             <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Results</h2>
-                            <div className="w-20 h-1 bg-purple-600 mb-12"></div>
+                            <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100 mb-12"></div>
 
                             <div className="grid md:grid-cols-2 gap-8">
                                 {study.results.map((result, index) => (
                                     <motion.div
                                         key={index}
                                         variants={fadeInUp}
-                                        className="relative bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300"
+                                        className="relative bg-white dark:bg-zinc-900 p-8 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300"
                                     >
                                         {/* Subtle accent */}
-                                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-t-2xl"></div>
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-100 dark:to-zinc-300 rounded-t-xl"></div>
                                         
                                         <div className="flex items-center gap-3 mb-4">
                                             <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center">

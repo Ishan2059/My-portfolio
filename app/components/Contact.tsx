@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { ShimmerButton } from "@/app/components/ui/shimmer-button";
 
 export default function Contact() {
     const containerVariants = {
@@ -24,14 +25,13 @@ export default function Contact() {
     };
 
     const socialLinks = [
-        { name: "GitHub", url: "https://github.com/Ishan2059" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/in/ishan-mishra-b874b3287/" },
-        { name: "Facebook", url: "https://www.facebook.com/ishan.mishra.90226" },
+        { name: "Instagram", url: "https://www.instagram.com/ishan.mishra.90226/" },
+        { name: "Twitter", url: "https://twitter.com/ishan2059" },
     ];
 
     return (
         <section id="contact" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-            <div className="px-6 mx-auto max-w-7xl sm:px-12 lg:px-16">
+            <div className="px-16 mx-auto max-w-7xl">
                 <motion.div
                     className="max-w-2xl mx-auto text-center"
                     initial="hidden"
@@ -52,49 +52,33 @@ export default function Contact() {
                         I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
                     </motion.p>
                     <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                        <motion.a
-                            href="mailto:ishanmishra2059@gmail.com"
+                        <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="w-full sm:w-auto text-center rounded-full bg-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition-colors duration-200 cursor-pointer"
                         >
-                            Say Hello
-                        </motion.a>
+                            <ShimmerButton
+                                background="var(--primary)"
+                                borderRadius="0.75rem"
+                                shimmerColor="#ffffff"
+                                className="w-full sm:w-auto text-center px-8 py-3.5 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:focus-visible:outline-zinc-100 transition-colors duration-200"
+                                onClick={() => window.location.href = "mailto:ishanmishra2059@gmail.com"}
+                            >
+                                Say Hello
+                            </ShimmerButton>
+                        </motion.div>
                         <motion.a
                             href="/Ishan_Mishra_Resume.pdf"
                             download="Ishan_Mishra_Resume.pdf"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 bg-transparent px-8 py-3.5 text-sm font-semibold text-purple-600 shadow-sm hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-950/30 transition-all duration-200 cursor-pointer"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-zinc-900 bg-transparent px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-100 dark:text-zinc-100 dark:hover:bg-zinc-900 transition-all duration-200 cursor-pointer"
                         >
                             <Download className="w-4 h-4" />
                             Download Resume
                         </motion.a>
                     </motion.div>
 
-                    <motion.div
-                        variants={itemVariants}
-                        className="mt-12 flex justify-center gap-8"
-                    >
-                        {socialLinks.map((social, index) => (
-                            <motion.a
-                                key={social.name}
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -3, scale: 1.1 }}
-                                className="text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 transition-colors duration-200"
-                                aria-label={`Visit my ${social.name} profile`}
-                            >
-                                <span className="sr-only">{social.name}</span>
-                                <span className="text-sm font-semibold">{social.name}</span>
-                            </motion.a>
-                        ))}
-                    </motion.div>
+
                 </motion.div>
             </div>
         </section>

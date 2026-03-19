@@ -73,13 +73,13 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed w-full z-50 transition-[background-color,backdrop-filter,box-shadow] duration-300 ${isScrolled || isMobileMenuOpen
-        ? "bg-white dark:bg-black shadow-sm"
-        : "bg-transparent"
-        }`}
+      className="fixed w-full z-50 bg-white dark:bg-black"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-        <div className="flex items-center justify-between h-16">
+      {/* Curved top border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-red-500 to-red-500 rounded-b-3xl"></div>
+
+      <div className="max-w-7xl mx-auto px-16">
+        <div className="flex items-center justify-between h-16 pt-4">
           <motion.div
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
@@ -88,7 +88,7 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={(e) => scrollToSection(e, "hero")}
-              className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-100"
+              className="text-lg font-bold tracking-tight text-foreground"
             >
               Portfolio
             </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
                     whileHover={{ y: -2 }}
-                    className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+                    className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
                   >
                     {item}
                   </motion.a>
@@ -127,7 +127,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="md:hidden p-2 text-zinc-900 dark:text-zinc-100"
+                className="md:hidden p-2 text-foreground"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
@@ -156,7 +156,7 @@ export default function Navbar() {
                     href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                     onClick={(e) => scrollToSection(e, item)}
                     variants={itemVariants}
-                    className="px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    className="px-4 py-2 font-medium text-foreground/70 hover:text-foreground transition-colors rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900"
                   >
                     {item}
                   </motion.a>

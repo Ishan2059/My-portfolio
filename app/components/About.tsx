@@ -44,11 +44,7 @@ export default function About() {
 
     return (
         <section id="about" className="relative py-32 bg-zinc-50 dark:bg-zinc-900/50 overflow-hidden">
-            {/* Background Blobs */}
-            <div className="absolute top-20 right-0 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob dark:bg-cyan-900 dark:opacity-30 will-change-[transform]"></div>
-            <div className="absolute bottom-10 left-10 w-64 h-64 bg-lime-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 dark:bg-lime-900 dark:opacity-30 will-change-[transform]"></div>
-
-            <div className="relative px-6 mx-auto max-w-7xl sm:px-12 lg:px-16 z-10">
+            <div className="relative px-4 mx-auto max-w-7xl z-10">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
                     <motion.div
                         initial="hidden"
@@ -60,14 +56,7 @@ export default function About() {
                             variants={itemVariants}
                             className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl mb-6"
                         >
-                            {["A", "b", "o", "u", "t", " "].map((letter, index) => (
-                                <span key={index} className="hover-rubber cursor-default">{letter}</span>
-                            ))}
-                            <span className="text-purple-600 dark:text-purple-400">
-                                {["M", "e"].map((letter, index) => (
-                                    <span key={index} className="hover-rubber cursor-default">{letter}</span>
-                                ))}
-                            </span>
+                            About Me
                         </motion.h2>
                         <motion.p variants={itemVariants} className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                             I am a dedicated UI/UX Designer with a focus on building accessible, pixel-perfect user interfaces that blend art with code.
@@ -90,9 +79,7 @@ export default function About() {
                             variants={itemVariants}
                             className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-6"
                         >
-                            {["S", "k", "i", "l", "l", "s"].map((letter, index) => (
-                                <span key={index} className="hover-rubber cursor-default">{letter}</span>
-                            ))}
+                            Skills
                         </motion.h3>
                         <ul className="grid grid-cols-2 gap-4">
                             {skills.map((skill, index) => (
@@ -100,10 +87,10 @@ export default function About() {
                                     key={skill}
                                     variants={skillVariants}
                                     custom={index}
-                                    className="flex items-center px-4 py-3 text-sm font-medium text-zinc-700 bg-white/80 backdrop-blur-sm border border-zinc-200 rounded-lg dark:bg-zinc-800/80 dark:border-zinc-700 dark:text-zinc-300 shadow-sm transition-all duration-200 hover:scale-105 hover:border-purple-500 dark:hover:border-purple-400"
+                                    className="flex items-center px-4 py-3 text-sm font-medium text-zinc-700 bg-white/80 backdrop-blur-sm border border-zinc-200 rounded-lg dark:bg-zinc-800/80 dark:border-zinc-700 dark:text-zinc-300 shadow-sm transition-all duration-200 hover:scale-105 hover:border-zinc-900 dark:hover:border-zinc-100"
                                 >
                                     <motion.span
-                                        className="w-2 h-2 mr-3 bg-purple-500 rounded-full"
+                                        className="w-2 h-2 mr-3 bg-zinc-900 dark:bg-zinc-100 rounded-full"
                                         animate={{ scale: [1, 1.2, 1] }}
                                         transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                                     />

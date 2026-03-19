@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, AlertCircle } from "lucide-react";
+import MinimalistNavbar from "./components/MinimalistNavbar";
+import { AlertCircle } from "lucide-react";
 import { useEffect } from "react";
+import { ShimmerButton } from "@/app/components/ui/shimmer-button";
 
 export default function Error({
     error,
@@ -37,6 +39,7 @@ export default function Error({
 
     return (
         <div className="relative flex flex-col min-h-screen bg-white dark:bg-black">
+            <MinimalistNavbar />
             <div className="flex-grow flex items-center justify-center px-6 py-24">
                 <motion.div
                     className="max-w-2xl w-full text-center"
@@ -85,13 +88,19 @@ export default function Error({
                         className="flex justify-center"
                     >
                         <Link href="/">
-                            <motion.button
+                            <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-white transition-all bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 cursor-pointer"
                             >
-                                Back to Home
-                            </motion.button>
+                                <ShimmerButton
+                                    background="var(--primary)"
+                                    borderRadius="0.75rem"
+                                    shimmerColor="#ffffff"
+                                    className="px-8 py-4 text-base font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900 dark:focus:ring-zinc-100"
+                                >
+                                    Back to Home
+                                </ShimmerButton>
+                            </motion.div>
                         </Link>
                     </motion.div>
 

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Lock } from "lucide-react";
+import { ShimmerButton } from "@/app/components/ui/shimmer-button";
 import { caseStudies } from "../data/caseStudies";
 
 export default function CaseStudies() {
@@ -39,7 +40,7 @@ export default function CaseStudies() {
 
     return (
         <section id="case-studies" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-            <div className="px-6 mx-auto max-w-7xl sm:px-12 lg:px-16">
+            <div className="px-4 mx-auto max-w-7xl">
                 <motion.div
                     className="max-w-2xl mx-auto text-center mb-16"
                     initial="hidden"
@@ -73,15 +74,15 @@ export default function CaseStudies() {
                         <motion.div
                             key={study.id}
                             variants={cardVariants}
-                            className={`flex flex-col overflow-hidden transition-all duration-300 bg-white border border-zinc-200 rounded-3xl dark:bg-zinc-900 dark:border-zinc-800 group shadow-sm ${study.available
-                                    ? "hover:shadow-2xl hover:border-purple-300 dark:hover:border-purple-600 cursor-pointer hover:scale-105"
+                            className={`flex flex-col overflow-hidden transition-all duration-300 bg-white border border-zinc-200 rounded-xl dark:bg-zinc-900 dark:border-zinc-800 group shadow-sm ${study.available
+                                    ? "hover:shadow-2xl hover:border-zinc-400 dark:hover:border-zinc-600 cursor-pointer md:hover:scale-105"
                                     : "opacity-75"
                                 }`}
                         >
                             {study.available ? (
                                 <Link href={`/case-studies/${study.id}`} className="flex flex-col h-full">
                                     {/* Image */}
-                                    <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center overflow-hidden relative">
+                                    <div className="aspect-video bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden relative">
                                         {study.images && study.images.length > 0 ? (
                                             <img
                                                 src={`/case-studies/${study.id}/Sixty images/${study.images[0]}`}
@@ -95,7 +96,7 @@ export default function CaseStudies() {
 
                                     {/* Content */}
                                     <div className="flex-1 p-6">
-                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300 mb-3">
+                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors duration-300 mb-3">
                                             {study.valueTitle}
                                         </h3>
                                         <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">
@@ -107,7 +108,7 @@ export default function CaseStudies() {
                                             {study.tags.slice(0, 3).map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 transition-all duration-300 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50"
+                                                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 transition-all duration-300 group-hover:bg-zinc-200 dark:group-hover:bg-zinc-700"
                                                 >
                                                     {tag}
                                                 </span>
@@ -117,7 +118,7 @@ export default function CaseStudies() {
 
                                     {/* CTA */}
                                     <div className="p-6 pt-0">
-                                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-all duration-300 group-hover:translate-x-1">
+                                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-all duration-300 group-hover:translate-x-1">
                                             View Case Study
                                             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                                         </span>
@@ -165,19 +166,22 @@ export default function CaseStudies() {
                     ))}
                 </motion.div>
 
-                {/* View All Button */}
-                <div className="text-center">
+                <div className="text-center flex justify-center">
                     <Link href="/case-studies">
-                        <motion.button
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-8 py-4 text-base font-bold text-white transition-all bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 cursor-pointer"
                         >
-                            View All Case Studies
-                        </motion.button>
+                            <ShimmerButton
+                                background="var(--primary)"
+                                borderRadius="0.75rem"
+                                shimmerColor="#ffffff"
+                                className="px-8 py-4 text-base font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900 dark:focus:ring-zinc-100"
+                            >
+                                View All Case Studies
+                            </ShimmerButton>
+                        </motion.div>
                     </Link>
                 </div>
             </div>

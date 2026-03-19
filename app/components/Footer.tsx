@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
     return (
         <footer className="bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800">
-            <div className="px-6 py-12 mx-auto max-w-7xl sm:px-12 lg:px-16">
+            <div className="px-16 py-12 mx-auto max-w-7xl">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

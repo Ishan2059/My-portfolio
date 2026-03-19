@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import MinimalistNavbar from "./components/MinimalistNavbar";
+import { ShimmerButton } from "@/app/components/ui/shimmer-button";
 
 export default function NotFound() {
     const containerVariants = {
@@ -26,6 +27,7 @@ export default function NotFound() {
 
     return (
         <div className="relative flex flex-col min-h-screen bg-white dark:bg-black">
+            <MinimalistNavbar />
             <div className="flex-grow flex items-center justify-center px-6 py-24">
                 <motion.div
                     className="max-w-2xl w-full text-center"
@@ -35,7 +37,7 @@ export default function NotFound() {
                 >
                     {/* 404 Number */}
                     <motion.div variants={itemVariants} className="mb-8">
-                        <h1 className="text-9xl md:text-[150px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 dark:from-purple-400 dark:via-pink-400 dark:to-indigo-400 leading-none">
+                        <h1 className="text-9xl md:text-[150px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-600 via-zinc-800 to-zinc-900 dark:from-zinc-400 dark:via-zinc-200 dark:to-zinc-100 leading-none">
                             404
                         </h1>
                     </motion.div>
@@ -62,13 +64,19 @@ export default function NotFound() {
                         className="flex justify-center"
                     >
                         <Link href="/">
-                            <motion.button
+                            <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 text-base font-bold text-white transition-all bg-purple-600 rounded-full hover:bg-purple-700 shadow-lg shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600 cursor-pointer"
                             >
-                                Back to Home
-                            </motion.button>
+                                <ShimmerButton
+                                    background="var(--primary)"
+                                    borderRadius="0.75rem"
+                                    shimmerColor="#ffffff"
+                                    className="px-8 py-4 text-base font-bold shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900 dark:focus:ring-zinc-100"
+                                >
+                                    Back to Home
+                                </ShimmerButton>
+                            </motion.div>
                         </Link>
                     </motion.div>
 

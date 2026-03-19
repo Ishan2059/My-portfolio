@@ -54,7 +54,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-24">
-            <div className="px-6 mx-auto max-w-7xl sm:px-12 lg:px-16">
+            <div className="px-4 mx-auto max-w-7xl">
                 <motion.div
                     className="max-w-2xl mx-auto text-center mb-16"
                     initial="hidden"
@@ -90,11 +90,11 @@ export default function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             variants={cardVariants}
-                            className="flex flex-col overflow-hidden transition-all duration-300 bg-white border border-zinc-200 rounded-2xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-2xl hover:border-purple-300 dark:hover:border-purple-600 dark:hover:shadow-purple-900/20 group cursor-pointer"
+                            className="flex flex-col overflow-hidden transition-all duration-300 bg-white border border-zinc-200 rounded-xl dark:bg-zinc-900 dark:border-zinc-800 hover:shadow-2xl hover:border-zinc-400 dark:hover:border-zinc-600 group cursor-pointer"
                             style={{ textDecoration: 'none' }}
                         >
                             <div className="flex-1 p-6">
-                                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors duration-300">
                                     {project.title}
                                 </h3>
                                 <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
@@ -104,7 +104,7 @@ export default function Projects() {
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 transition-all duration-300 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50"
+                                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 transition-all duration-300 group-hover:bg-zinc-200 dark:group-hover:bg-zinc-700"
                                         >
                                             {tag}
                                         </span>
@@ -112,7 +112,7 @@ export default function Projects() {
                                 </div>
                             </div>
                             <div className="p-6 pt-0 mt-auto">
-                                <span className="inline-flex items-center text-sm font-semibold text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-all duration-300 group-hover:translate-x-1">
+                                <span className="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-all duration-300 group-hover:translate-x-1">
                                     View Project <span aria-hidden="true" className="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                                 </span>
                             </div>
