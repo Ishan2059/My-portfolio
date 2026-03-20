@@ -205,7 +205,7 @@ export const caseStudies: CaseStudy[] = [
 
         // Template expects: /case-studies/{study.id}/Sixty images/{filename}
         images: [
-            "c__Users_Ishan_AppData_Roaming_Cursor_User_workspaceStorage_47efd00035df501228c39e41cc3382d3_images_image-11984e7e-5499-431c-bb7f-02be5323dad6.png",
+            "FinalDesign.png",
         ],
         available: true,
         dateUploaded: "Mar 19, 2026",

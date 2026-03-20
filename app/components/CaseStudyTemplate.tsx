@@ -206,6 +206,12 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                         src={`/case-studies/${study.id}/Sixty images/${image}`}
                                         alt={`${study.title} screenshot ${index + 1}`}
                                         className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            const img = e.currentTarget;
+                                            if (img.dataset.fallbacked === "1") return;
+                                            img.dataset.fallbacked = "1";
+                                            img.src = `/case-studies/${study.id}/Sixtyimages/${image}`;
+                                        }}
                                     />
                                 </motion.div>
                             ))}
