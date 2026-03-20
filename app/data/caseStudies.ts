@@ -158,7 +158,7 @@ export const caseStudies: CaseStudy[] = [
         id: "hamro-patro",
         title: "Hamro Patro (Redesign)",
         shortDescription:
-            "Optimizing utility through a minimalist redesign that reduces clutter and makes the calendar + today’s festivals instantly readable.",
+            "Hamro Patro Problem Case Study",
         valueTitle: "Reducing Time-to-Information Through a Utility-First Minimalist Redesign (Hamro Patro)",
         role: "Product Designer",
         timeline: "Redesign Sprint (Insert Time)",
@@ -173,7 +173,7 @@ export const caseStudies: CaseStudy[] = [
             "The friction wasn't a lack of features; it was a lack of focus. High cognitive load from mixed content (ads vs. utility) prevented users from completing their primary task: check, confirm, and close.",
 
         solution:
-            "I designed a streamlined, high-hierarchy interface that prioritizes the calendar and upcoming festivals while suppressing non-essential elements. By applying a 'Utility-First' visual language, I ensured users could find the tithi or event of the day in under 2 seconds, regardless of their tech literacy.",
+            "I designed a streamlined, high-hierarchy interface that prioritizes the calendar and upcoming festivals while suppressing non-essential elements. By applying a 'Utility-First' visual language, I ensured users could find the day in under 2 seconds, regardless of their tech literacy.",
 
         process: [
             {
@@ -191,7 +191,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 step: "Prototyping & Motion Design",
                 description:
-                    "I generated a high-fidelity redesign in Figma and created a video walkthrough to demonstrate fluid transitions between calendar and event details.",
+                    "I generated a high-fidelity redesign in Figma and created a video walkthrough to demonstrate the solution.",
                 outcome: "Transformed a static, overwhelming experience into a dynamic, user-centric tool.",
             },
         ],
@@ -200,7 +200,7 @@ export const caseStudies: CaseStudy[] = [
             { metric: "Time-to-Information", value: "Under 2 seconds" },
             { metric: "Cognitive Load", value: "Significantly Reduced" },
             { metric: "Visual Hierarchy", value: "Calendar-First Focus" },
-            { metric: "User Experience", value: "Ram Bahadur Approved" },
+            { metric: "User Experience", value: "Happy user" },
         ],
 
         // Template expects: /case-studies/{study.id}/Sixty images/{filename}
