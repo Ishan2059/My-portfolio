@@ -155,6 +155,63 @@ export const caseStudies: CaseStudy[] = [
         dateUpdated: getToday(),
     },
     {
+        id: "hamro-patro",
+        title: "Hamro Patro (Redesign)",
+        shortDescription:
+            "Optimizing utility through a minimalist redesign that reduces clutter and makes the calendar + today’s festivals instantly readable.",
+        valueTitle: "Reducing Time-to-Information Through a Utility-First Minimalist Redesign (Hamro Patro)",
+        role: "Product Designer",
+        timeline: "Redesign Sprint (Insert Time)",
+        platform: "Mobile App",
+        tags: ["UI/UX Design", "Product Design", "Utility-First", "Minimalist Redesign"],
+        tools: ["Figma", "ChatGPT/Gemini (Research)", "Video walkthrough"],
+
+        problem:
+            "Hamro Patro is a vital utility for millions, yet its current interface suffers from extreme visual clutter. Between calendars, weather updates, and intrusive ads, the core value—the date and festivals—is buried. For users like Ram Bahadur (45, Kathmandu), the app feels like a 'digital maze' rather than a quick utility tool.",
+
+        keyInsight:
+            "The friction wasn't a lack of features; it was a lack of focus. High cognitive load from mixed content (ads vs. utility) prevented users from completing their primary task: check, confirm, and close.",
+
+        solution:
+            "I designed a streamlined, high-hierarchy interface that prioritizes the calendar and upcoming festivals while suppressing non-essential elements. By applying a 'Utility-First' visual language, I ensured users could find the tithi or event of the day in under 2 seconds, regardless of their tech literacy.",
+
+        process: [
+            {
+                step: "Empathy & Persona Mapping",
+                description:
+                    "I defined Ram Bahadur as a representative persona—someone who needs high legibility and zero distractions. This helped anchor every design decision in a single success metric.",
+                outcome: 'Identified "Time-to-Information" as the primary success metric.',
+            },
+            {
+                step: "AI-Assisted Friction Analysis",
+                description:
+                    "To validate assumptions, I used AI tools (ChatGPT & Gemini) to audit existing UI screenshots. This helped pinpoint specific dark-pattern behaviors and visual bottlenecks.",
+                outcome: "Isolated three core issues—Visual Clutter, Weak Hierarchy, and Intrusive Ad Placement.",
+            },
+            {
+                step: "Prototyping & Motion Design",
+                description:
+                    "I generated a high-fidelity redesign in Figma and created a video walkthrough to demonstrate fluid transitions between calendar and event details.",
+                outcome: "Transformed a static, overwhelming experience into a dynamic, user-centric tool.",
+            },
+        ],
+
+        results: [
+            { metric: "Time-to-Information", value: "Under 2 seconds" },
+            { metric: "Cognitive Load", value: "Significantly Reduced" },
+            { metric: "Visual Hierarchy", value: "Calendar-First Focus" },
+            { metric: "User Experience", value: "Ram Bahadur Approved" },
+        ],
+
+        // Template expects: /case-studies/{study.id}/Sixty images/{filename}
+        images: [
+            "c__Users_Ishan_AppData_Roaming_Cursor_User_workspaceStorage_47efd00035df501228c39e41cc3382d3_images_image-11984e7e-5499-431c-bb7f-02be5323dad6.png",
+        ],
+        available: true,
+        dateUploaded: "Mar 19, 2026",
+        dateUpdated: getToday(),
+    },
+    {
         id: "fintech-dashboard",
         title: "Coming Soon",
         shortDescription: "More case studies coming soon. Stay tuned!",
