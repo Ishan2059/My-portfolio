@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { ShimmerButton } from "@/app/components/ui/shimmer-button";
 import { caseStudies } from "../data/caseStudies";
 
@@ -75,46 +75,27 @@ export default function CaseStudies() {
                             key={study.id}
                             variants={cardVariants}
                             className={`flex flex-col overflow-hidden transition-all duration-300 bg-white border border-zinc-200 rounded-xl dark:bg-zinc-900 dark:border-zinc-800 group shadow-sm ${study.available
-                                    ? "hover:shadow-2xl hover:border-zinc-400 dark:hover:border-zinc-600 cursor-pointer md:hover:scale-105"
+                                    ? "hover:shadow-2xl hover:border-zinc-400 dark:hover:border-zinc-600 cursor-pointer"
                                     : "opacity-75"
                                 }`}
                         >
                             {study.available ? (
-                                <Link href={`/case-studies/${study.id}`} className="flex flex-col h-full">
-                                    {/* Image */}
-                                    <div className="aspect-video bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden relative">
-                                        {study.images && study.images.length > 0 ? (
-                                            <img
-                                                src={`/case-studies/${study.id}/Sixty images/${study.images[0]}`}
-                                                alt={study.title}
-                                                className="w-full h-full object-cover"
-                                                    onError={(e) => {
-                                                        const img = e.currentTarget;
-                                                        if (img.dataset.fallbacked === "1") return;
-                                                        img.dataset.fallbacked = "1";
-                                                        img.src = `/case-studies/${study.id}/Sixtyimages/${study.images[0]}`;
-                                                    }}
-                                            />
-                                        ) : (
-                                            <span className="text-5xl">📱</span>
-                                        )}
-                                    </div>
-
+                                <Link href={`/case-studies/${study.id}`} className="flex flex-col h-full" style={{ textDecoration: 'none' }}>
                                     {/* Content */}
                                     <div className="flex-1 p-6">
-                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors duration-300 mb-3">
+                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors duration-300">
                                             {study.valueTitle}
                                         </h3>
-                                        <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">
+                                        <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
                                             {study.shortDescription}
                                         </p>
 
                                         {/* Tags */}
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 mt-6">
                                             {study.tags.slice(0, 3).map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 transition-all duration-300 group-hover:bg-zinc-200 dark:group-hover:bg-zinc-700"
+                                                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 transition-all duration-300 group-hover:bg-zinc-200 dark:group-hover:bg-zinc-700"
                                                 >
                                                     {tag}
                                                 </span>
@@ -123,35 +104,29 @@ export default function CaseStudies() {
                                     </div>
 
                                     {/* CTA */}
-                                    <div className="p-6 pt-0">
-                                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-all duration-300 group-hover:translate-x-1">
-                                            View Case Study
-                                            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                    <div className="p-6 pt-0 mt-auto">
+                                        <span className="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-all duration-300 group-hover:translate-x-1">
+                                            View Case Study <span aria-hidden="true" className="ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                                         </span>
                                     </div>
                                 </Link>
                             ) : (
                                 <div className="flex flex-col h-full">
-                                    {/* Image Placeholder */}
-                                    <div className="aspect-video bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden relative">
-                                        <Lock className="w-12 h-12 text-zinc-400 dark:text-zinc-600" />
-                                    </div>
-
                                     {/* Content */}
                                     <div className="flex-1 p-6">
-                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                                        <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                                             {study.valueTitle}
                                         </h3>
-                                        <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">
+                                        <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
                                             {study.shortDescription}
                                         </p>
 
                                         {/* Tags */}
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-2 mt-6">
                                             {study.tags.slice(0, 3).map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+                                                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
                                                 >
                                                     {tag}
                                                 </span>
@@ -160,7 +135,7 @@ export default function CaseStudies() {
                                     </div>
 
                                     {/* Coming Soon Badge */}
-                                    <div className="p-6 pt-0">
+                                    <div className="p-6 pt-0 mt-auto">
                                         <span className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-500 dark:text-zinc-500">
                                             <Lock className="w-4 h-4" />
                                             Coming Soon
