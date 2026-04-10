@@ -41,10 +41,66 @@ const getToday = (): string => formatDate(new Date());
 
 export const caseStudies: CaseStudy[] = [
     {
+        id: "minto",
+        title: "Minto",
+        shortDescription: "Redesigning the relationship between young people and their money through calm, emotionally accessible budgeting.",
+        valueTitle: "Minto — Redesigning the Relationship Between Young People and Their Money",
+        role: "UX Researcher & UI Designer",
+        timeline: "3 weeks",
+        platform: "Mobile App",
+        tags: ["UX Research", "UI Design", "Solo Project", "Self-initiated"],
+        tools: ["Figma", "Base44"],
+        
+        problem: "I narrowed the scope to one type of person: someone in their mid-twenties who does not live with their parents, has a relatively stable income, and has no real system for managing it. They are not in a financial crisis. They are simply floating by - spending money with little conscious thought and checking their bank balance with a knot in their stomach. They're not looking for a financial planning tool. They want something that gives them a clear, honest picture of where they stand without making it feel like they have already failed.",
+        
+        solution: "The main screen is built around three questions a user probably has when they open the app: How much did I set aside this month? How much have I spent? How much do I have left? Those three questions become the three cards at the top. The progress bar sits under 'Spent So Far' and fills in sage green — not because green means good, but because a neutral colour doesn't trigger a stress response the way red does. The remaining amount is shown in the same green, front and centre, because that's what users told me they actually wanted to see.",
+        
+        keyInsight: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible. The result is what one may call 'anticipatory dread.' For instance, one individual hides from her bank app in order not to spend too much, while another stopped budgeting as she found the whole process to be the job of 'experts.'",
+        
+        process: [
+            {
+                step: "Research",
+                description: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible.",
+                outcome: "Identified that the main barrier was emotional, not informational. Users experienced 'anticipatory dread' when opening financial apps."
+            },
+            {
+                step: "Design Principles",
+                description: "Three principles shaped everything that followed: Prioritize calm over comprehensiveness. Frame is more important than figures. Avoid a penalty mindset. No red color, no exclamation marks, and no wording that might suggest the user has done something wrong if they spend too much money on meals.",
+                outcome: "Established a design framework focused on emotional accessibility rather than feature completeness."
+            },
+            {
+                step: "Dashboard Design",
+                description: "Below that, the spending breakdown gives a category-level view without overwhelming detail. The donut chart keeps it visual and quick. The legend shows the five categories with amounts and percentages — enough to notice a pattern, not enough to spiral into analysis. The recent transactions list sits alongside it. It's intentionally simple: merchant, category tag, amount, date.",
+                outcome: "Created a dashboard that provides just enough information to feel oriented without overwhelming the user."
+            }
+        ],
+        
+        results: [
+            {
+                metric: "Design Philosophy",
+                value: "Calm Over Comprehensive"
+            },
+            {
+                metric: "User Experience",
+                value: "No Penalty Mindset"
+            },
+            {
+                metric: "Information Design",
+                value: "Frame Over Figures"
+            }
+        ],
+        
+        images: [],
+        available: true,
+        dateUploaded: getToday(),
+        dateUpdated: getToday(),
+        notionLink: "https://evening-avocado-5a9.notion.site/Minto-Redesigning-the-Relationship-Between-Young-People-and-Their-Money-33ebea1a3b7d8034a00fc81a57008202?pvs=143",
+    },
+    {
         id: "sixty",
         title: "Sixty",
         shortDescription: "A React Native mental wellness app built in 24 hours to solve weekend overthinking through constrained 60-second daily reflections.",
-        valueTitle: "Reducing Mental Friction by 60% Through Micro-Journaling for Sixty",
+        valueTitle: "The 60-Second Friction Fix",
         role: "Product Designer & Developer",
         timeline: "24 Hours",
         platform: "iOS & Android",
@@ -101,66 +157,11 @@ export const caseStudies: CaseStudy[] = [
         dateUpdated: "Jan 29, 2026",
     },
     {
-        id: "game-flow-mapping",
-        title: "Game Flow Mapping",
-        shortDescription: "Resolving client-team misalignment through structured game flow mapping across 3 game modes.",
-        valueTitle: "Resolving Client-Team Misalignment Through Structured Game Flow Mapping",
-        role: "Product Designer",
-        timeline: "~4 Hours",
-        platform: "Mobile Game (3 Game Modes)",
-        tags: ["Product Design", "Flow Mapping", "Collaboration", "Mobile Game"],
-        tools: ["FigJam", "Figma"],
-        
-        problem: "When a client returned to an already-completed mobile game project with change requests, the team struggled to align on what exactly needed to change. Miscommunication was slowing the project down, and the client — sensing the disconnect — asked the team to document their current understanding so the gaps could be identified before the next meeting.",
-        
-        solution: "I created a comprehensive game flow in FigJam, broken down across all 3 game modes. Each mode was mapped into three clear phases — Before Gameplay, During Gameplay, and After Gameplay — giving both the team and the client a single, easy-to-follow reference. This structure made it simple for the client to pinpoint exactly where the team's understanding diverged from their expectations.",
-        
-        keyInsight: "The confusion wasn't about the changes themselves — it was about the lack of a shared reference point. The team and the client were interpreting the same requirements differently because no one had mapped out the full picture. A structured, visual flow would give everyone the same starting point.",
-        
-        process: [
-            {
-                step: "Understanding",
-                description: "I reviewed the client's document carefully to extract the expected behavior for each game mode, then cross-referenced it with the existing Figma design to understand the current state of the product.",
-                outcome: "Built a clear mental model of the gap between what was built and what the client expected."
-            },
-            {
-                step: "Structuring",
-                description: "Rather than mapping the flow as one single stream, I divided each game mode into three phases — Before, During, and After Gameplay. This made the flow digestible and easy to scan, especially for the client who needed to quickly spot discrepancies.",
-                outcome: "Created a framework that worked across all 3 game modes consistently, reducing ambiguity."
-            },
-            {
-                step: "Mapping & Implementation",
-                description: "I built the full flow in FigJam and then carried the understanding into the existing Figma design, ensuring the team could see how the flow connected to the actual product.",
-                outcome: "Gave the team and client a shared visual reference to align on before the Tuesday meeting."
-            }
-        ],
-        
-        results: [
-            {
-                metric: "Communication Gap",
-                value: "Eliminated"
-            },
-            {
-                metric: "Alignment",
-                value: "100% Achieved"
-            },
-            {
-                metric: "Stakeholder Satisfaction",
-                value: "Client & Team Happy"
-            }
-        ],
-        
-        images: [],
-        available: true,
-        dateUploaded: "Jan 31, 2026",
-        dateUpdated: getToday(),
-    },
-    {
         id: "hamro-patro",
         title: "Hamro Patro (Redesign)",
         shortDescription:
             "Hamro Patro Problem Case Study",
-        valueTitle: "Reducing Time-to-Information Through a Utility-First Minimalist Redesign (Hamro Patro)",
+        valueTitle: "Faster Insights: A Minimalist Redesign of Hamro Patro",
         role: "Product Designer",
         timeline: "Redesign Sprint (Insert Time)",
         platform: "Mobile App",
@@ -213,60 +214,59 @@ export const caseStudies: CaseStudy[] = [
         dateUpdated: getToday(),
     },
     {
-        id: "minto",
-        title: "Minto",
-        shortDescription: "Redesigning the relationship between young people and their money through calm, emotionally accessible budgeting.",
-        valueTitle: "Minto — Redesigning the Relationship Between Young People and Their Money",
-        role: "UX Researcher & UI Designer",
-        timeline: "3 weeks",
-        platform: "Mobile App",
-        tags: ["UX Research", "UI Design", "Solo Project", "Self-initiated"],
-        tools: ["Figma", "Base44"],
+        id: "game-flow-mapping",
+        title: "Game Flow Mapping",
+        shortDescription: "Resolving client-team misalignment through structured game flow mapping across 3 game modes.",
+        valueTitle: "Mapping Game Flow to Align Client and Team",
+        role: "Product Designer",
+        timeline: "~4 Hours",
+        platform: "Mobile Game (3 Game Modes)",
+        tags: ["Product Design", "Flow Mapping", "Collaboration", "Mobile Game"],
+        tools: ["FigJam", "Figma"],
         
-        problem: "I narrowed the scope to one type of person: someone in their mid-twenties who does not live with their parents, has a relatively stable income, and has no real system for managing it. They are not in a financial crisis. They are simply floating by - spending money with little conscious thought and checking their bank balance with a knot in their stomach. They're not looking for a financial planning tool. They want something that gives them a clear, honest picture of where they stand without making it feel like they have already failed.",
+        problem: "When a client returned to an already-completed mobile game project with change requests, the team struggled to align on what exactly needed to change. Miscommunication was slowing the project down, and the client — sensing the disconnect — asked the team to document their current understanding so the gaps could be identified before the next meeting.",
         
-        solution: "The main screen is built around three questions a user probably has when they open the app: How much did I set aside this month? How much have I spent? How much do I have left? Those three questions become the three cards at the top. The progress bar sits under 'Spent So Far' and fills in sage green — not because green means good, but because a neutral colour doesn't trigger a stress response the way red does. The remaining amount is shown in the same green, front and centre, because that's what users told me they actually wanted to see.",
+        solution: "I created a comprehensive game flow in FigJam, broken down across all 3 game modes. Each mode was mapped into three clear phases — Before Gameplay, During Gameplay, and After Gameplay — giving both the team and the client a single, easy-to-follow reference. This structure made it simple for the client to pinpoint exactly where the team's understanding diverged from their expectations.",
         
-        keyInsight: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible. The result is what one may call 'anticipatory dread.' For instance, one individual hides from her bank app in order not to spend too much, while another stopped budgeting as she found the whole process to be the job of 'experts.'",
+        keyInsight: "The confusion wasn't about the changes themselves — it was about the lack of a shared reference point. The team and the client were interpreting the same requirements differently because no one had mapped out the full picture. A structured, visual flow would give everyone the same starting point.",
         
         process: [
             {
-                step: "Research",
-                description: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible.",
-                outcome: "Identified that the main barrier was emotional, not informational. Users experienced 'anticipatory dread' when opening financial apps."
+                step: "Understanding",
+                description: "I reviewed the client's document carefully to extract the expected behavior for each game mode, then cross-referenced it with the existing Figma design to understand the current state of the product.",
+                outcome: "Built a clear mental model of the gap between what was built and what the client expected."
             },
             {
-                step: "Design Principles",
-                description: "Three principles shaped everything that followed: Prioritize calm over comprehensiveness. Frame is more important than figures. Avoid a penalty mindset. No red color, no exclamation marks, and no wording that might suggest the user has done something wrong if they spend too much money on meals.",
-                outcome: "Established a design framework focused on emotional accessibility rather than feature completeness."
+                step: "Structuring",
+                description: "Rather than mapping the flow as one single stream, I divided each game mode into three phases — Before, During, and After Gameplay. This made the flow digestible and easy to scan, especially for the client who needed to quickly spot discrepancies.",
+                outcome: "Created a framework that worked across all 3 game modes consistently, reducing ambiguity."
             },
             {
-                step: "Dashboard Design",
-                description: "Below that, the spending breakdown gives a category-level view without overwhelming detail. The donut chart keeps it visual and quick. The legend shows the five categories with amounts and percentages — enough to notice a pattern, not enough to spiral into analysis. The recent transactions list sits alongside it. It's intentionally simple: merchant, category tag, amount, date.",
-                outcome: "Created a dashboard that provides just enough information to feel oriented without overwhelming the user."
+                step: "Mapping & Implementation",
+                description: "I built the full flow in FigJam and then carried the understanding into the existing Figma design, ensuring the team could see how the flow connected to the actual product.",
+                outcome: "Gave the team and client a shared visual reference to align on before the Tuesday meeting."
             }
         ],
         
         results: [
             {
-                metric: "Design Philosophy",
-                value: "Calm Over Comprehensive"
+                metric: "Communication Gap",
+                value: "Eliminated"
             },
             {
-                metric: "User Experience",
-                value: "No Penalty Mindset"
+                metric: "Alignment",
+                value: "100% Achieved"
             },
             {
-                metric: "Information Design",
-                value: "Frame Over Figures"
+                metric: "Stakeholder Satisfaction",
+                value: "Client & Team Happy"
             }
         ],
         
         images: [],
         available: true,
-        dateUploaded: getToday(),
+        dateUploaded: "Jan 31, 2026",
         dateUpdated: getToday(),
-        notionLink: "https://evening-avocado-5a9.notion.site/Minto-Redesigning-the-Relationship-Between-Young-People-and-Their-Money-33ebea1a3b7d8034a00fc81a57008202?pvs=143",
     },
     {
         id: "fintech-dashboard",
