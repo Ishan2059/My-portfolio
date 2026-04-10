@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
         id: "minto",
         title: "Minto",
         shortDescription: "Redesigning the relationship between young people and their money through calm, emotionally accessible budgeting.",
-        valueTitle: "Minto — Redesigning the Relationship Between Young People and Their Money",
+        valueTitle: "Minto: Redefining Young Finance",
         role: "UX Researcher & UI Designer",
         timeline: "3 weeks",
         platform: "Mobile App",
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
             }
         ],
         
-        images: [],
+        images: ["minto-dashboard.png"],
         available: true,
         dateUploaded: getToday(),
         dateUpdated: getToday(),
@@ -163,7 +163,7 @@ export const caseStudies: CaseStudy[] = [
             "Hamro Patro Problem Case Study",
         valueTitle: "Faster Insights: A Minimalist Redesign of Hamro Patro",
         role: "Product Designer",
-        timeline: "Redesign Sprint (Insert Time)",
+        timeline: "1 day",
         platform: "Mobile App",
         tags: ["UI/UX Design", "Product Design", "Utility-First", "Minimalist Redesign"],
         tools: ["Figma", "ChatGPT/Gemini (Research)", "Video walkthrough"],

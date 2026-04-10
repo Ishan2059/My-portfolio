@@ -213,25 +213,33 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                         </div>
 
                         <div className="grid grid-cols-2 gap-6 max-w-2xl">
-                            {study.images.slice(0, 4).map((image, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={fadeInUp}
-                                    className="aspect-[9/16] rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                                >
-                                    <img
-                                        src={`/case-studies/${study.id}/Sixty images/${image}`}
-                                        alt={`${study.title} screenshot ${index + 1}`}
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            const img = e.currentTarget;
-                                            if (img.dataset.fallbacked === "1") return;
-                                            img.dataset.fallbacked = "1";
-                                            img.src = `/case-studies/${study.id}/Sixtyimages/${image}`;
-                                        }}
-                                    />
-                                </motion.div>
-                            ))}
+                            {study.images.slice(0, 4).map((image, index) => {
+                                // Determine the correct image path based on the case study
+                                const imagePath = study.id === 'minto' 
+                                    ? `/case-studies/${study.id}/${image}`
+                                    : `/case-studies/${study.id}/Sixty images/${image}`;
+                                const fallbackPath = `/case-studies/${study.id}/Sixtyimages/${image}`;
+                                
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        variants={fadeInUp}
+                                        className="rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                                    >
+                                        <img
+                                            src={imagePath}
+                                            alt={`${study.title} screenshot ${index + 1}`}
+                                            className="w-full h-auto object-contain"
+                                            onError={(e) => {
+                                                const img = e.currentTarget;
+                                                if (img.dataset.fallbacked === "1") return;
+                                                img.dataset.fallbacked = "1";
+                                                img.src = fallbackPath;
+                                            }}
+                                        />
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </motion.section>
                 )}
