@@ -27,6 +27,7 @@ export interface CaseStudy {
     available: boolean;
     dateUploaded: string;
     dateUpdated?: string; // Optional - will auto-generate if not provided
+    notionLink?: string; // Optional - Notion documentation link
 }
 
 // Helper function to format date
@@ -210,6 +211,62 @@ export const caseStudies: CaseStudy[] = [
         available: true,
         dateUploaded: "Mar 19, 2026",
         dateUpdated: getToday(),
+    },
+    {
+        id: "minto",
+        title: "Minto",
+        shortDescription: "Redesigning the relationship between young people and their money through calm, emotionally accessible budgeting.",
+        valueTitle: "Minto — Redesigning the Relationship Between Young People and Their Money",
+        role: "UX Researcher & UI Designer",
+        timeline: "3 weeks",
+        platform: "Mobile App",
+        tags: ["UX Research", "UI Design", "Solo Project", "Self-initiated"],
+        tools: ["Figma", "Base44"],
+        
+        problem: "I narrowed the scope to one type of person: someone in their mid-twenties who does not live with their parents, has a relatively stable income, and has no real system for managing it. They are not in a financial crisis. They are simply floating by - spending money with little conscious thought and checking their bank balance with a knot in their stomach. They're not looking for a financial planning tool. They want something that gives them a clear, honest picture of where they stand without making it feel like they have already failed.",
+        
+        solution: "The main screen is built around three questions a user probably has when they open the app: How much did I set aside this month? How much have I spent? How much do I have left? Those three questions become the three cards at the top. The progress bar sits under 'Spent So Far' and fills in sage green — not because green means good, but because a neutral colour doesn't trigger a stress response the way red does. The remaining amount is shown in the same green, front and centre, because that's what users told me they actually wanted to see.",
+        
+        keyInsight: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible. The result is what one may call 'anticipatory dread.' For instance, one individual hides from her bank app in order not to spend too much, while another stopped budgeting as she found the whole process to be the job of 'experts.'",
+        
+        process: [
+            {
+                step: "Research",
+                description: "After talking to fellow Millennials between the ages of 22-27, it became clear that the main issue with budgeting is not lack of information, but rather an emotional challenge. While other rely heavily on numbers and constant notifications, they are not emotionally accessible.",
+                outcome: "Identified that the main barrier was emotional, not informational. Users experienced 'anticipatory dread' when opening financial apps."
+            },
+            {
+                step: "Design Principles",
+                description: "Three principles shaped everything that followed: Prioritize calm over comprehensiveness. Frame is more important than figures. Avoid a penalty mindset. No red color, no exclamation marks, and no wording that might suggest the user has done something wrong if they spend too much money on meals.",
+                outcome: "Established a design framework focused on emotional accessibility rather than feature completeness."
+            },
+            {
+                step: "Dashboard Design",
+                description: "Below that, the spending breakdown gives a category-level view without overwhelming detail. The donut chart keeps it visual and quick. The legend shows the five categories with amounts and percentages — enough to notice a pattern, not enough to spiral into analysis. The recent transactions list sits alongside it. It's intentionally simple: merchant, category tag, amount, date.",
+                outcome: "Created a dashboard that provides just enough information to feel oriented without overwhelming the user."
+            }
+        ],
+        
+        results: [
+            {
+                metric: "Design Philosophy",
+                value: "Calm Over Comprehensive"
+            },
+            {
+                metric: "User Experience",
+                value: "No Penalty Mindset"
+            },
+            {
+                metric: "Information Design",
+                value: "Frame Over Figures"
+            }
+        ],
+        
+        images: [],
+        available: true,
+        dateUploaded: getToday(),
+        dateUpdated: getToday(),
+        notionLink: "https://www.notion.so/Minto-Redesigning-the-Relationship-Between-Young-People-and-Their-Money",
     },
     {
         id: "fintech-dashboard",
