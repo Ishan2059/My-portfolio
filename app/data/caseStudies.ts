@@ -266,7 +266,7 @@ export const caseStudies: CaseStudy[] = [
         available: true,
         dateUploaded: getToday(),
         dateUpdated: getToday(),
-        notionLink: "https://www.notion.so/Minto-Redesigning-the-Relationship-Between-Young-People-and-Their-Money",
+        notionLink: "https://evening-avocado-5a9.notion.site/Minto-Redesigning-the-Relationship-Between-Young-People-and-Their-Money-33ebea1a3b7d8034a00fc81a57008202?pvs=143",
     },
     {
         id: "fintech-dashboard",
