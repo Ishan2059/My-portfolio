@@ -215,7 +215,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                             <div className="w-20 h-1 bg-zinc-900 dark:bg-zinc-100"></div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+                        <div className="flex justify-center max-w-full">
                             {study.images.slice(0, 4).map((image, index) => {
                                 // Determine the correct image path based on the case study
                                 const imagePath = study.id === 'minto' 
@@ -227,7 +227,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                     <motion.div
                                         key={index}
                                         variants={fadeInUp}
-                                        className="rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                                        className="w-full max-w-4xl rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300"
                                     >
                                         <img
                                             src={imagePath}

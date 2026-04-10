@@ -98,9 +98,9 @@ export default function CaseStudiesPage() {
                                         <div className="aspect-video bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden relative">
                                             {study.images && study.images.length > 0 ? (
                                                 <img
-                                                    src={`/case-studies/${study.id}/Sixty images/${study.images[0]}`}
+                                                    src={study.id === 'minto' ? `/case-studies/${study.id}/${study.images[0]}` : `/case-studies/${study.id}/Sixty images/${study.images[0]}`}
                                                     alt={study.title}
-                                                    className="w-full h-full object-cover"
+                                                    className="w-full h-full object-contain"
                                                     onError={(e) => {
                                                         const img = e.currentTarget;
                                                         if (img.dataset.fallbacked === "1") return;
