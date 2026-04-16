@@ -227,7 +227,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                     <motion.div
                                         key={index}
                                         variants={fadeInUp}
-                                        className="w-full max-w-4xl rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="w-full max-w-2xl rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300"
                                     >
                                         <img
                                             src={imagePath}
