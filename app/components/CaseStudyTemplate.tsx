@@ -232,8 +232,8 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                         <img
                                             src={imagePath}
                                             alt={`${study.title} screenshot ${index + 1}`}
-                                            className="w-full h-auto object-contain mx-auto"
-                                            style={{ minHeight: '400px' }}
+                                            className="h-auto object-contain mx-auto"
+                                            style={{ width: '50%', minHeight: 'auto' }}
                                             onError={(e) => {
                                                 const img = e.currentTarget;
                                                 if (img.dataset.fallbacked === "1") return;
