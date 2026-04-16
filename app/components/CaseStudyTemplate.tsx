@@ -218,7 +218,7 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                         <div className="flex justify-center max-w-full">
                             {study.images.slice(0, 4).map((image, index) => {
                                 // Determine the correct image path based on the case study
-                                const imagePath = study.id === 'minto' 
+                                const imagePath = (study.id === 'minto' || study.id === 'roam')
                                     ? `/case-studies/${study.id}/${image}`
                                     : `/case-studies/${study.id}/Sixty images/${image}`;
                                 const fallbackPath = `/case-studies/${study.id}/Sixtyimages/${image}`;

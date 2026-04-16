@@ -157,6 +157,61 @@ export const caseStudies: CaseStudy[] = [
         dateUpdated: "Jan 29, 2026",
     },
     {
+        id: "roam",
+        title: "Roam",
+        shortDescription: "A local event discovery app that prioritizes social proof and immediate recommendations over endless browsing.",
+        valueTitle: "Roam — Finding Your City Again",
+        role: "UX Researcher & UI Designer",
+        timeline: "3 weeks",
+        platform: "Mobile App",
+        tags: ["UX Research", "UI Design", "Solo Project", "Self-initiated"],
+        tools: ["Figma"],
+        
+        problem: "Discovering local events sounds like a solved problem. It isn't. The friction isn't access to information — it's trust and relevance. Eventbrite overwhelms you with listings. Facebook Events assumes you're already embedded in a local community. None of them answer the question people actually have: what's worth going to tonight, near me, that people I know are already attending?",
+        
+        solution: "One strong recommendation over a long list. The featured 'Happening Tonight' card takes up most of the screen deliberately. It's a suggestion, not a listing. Social proof as a top-level element. The '+24 friends going' line and the 'Friends Are Going' strip aren't buried in a tab — they're on the main screen, because that's what actually gets people to show up. Editorial visual language. The serif logo, real photography, and warm parchment background make Roam feel like a city magazine recommendation rather than a database query.",
+        
+        keyInsight: "I had four informal conversations with people in their early-to-mid twenties who'd recently moved cities. Three things came up every time: Proximity is emotional, not geographical. People skipped events that felt far even when they were walkable. Social proof is the real discovery mechanism. In almost every case, someone tried something new because a friend was going — not because they found it themselves. The decision window is tiny. Nobody browses events like Netflix.",
+        
+        process: [
+            {
+                step: "Research",
+                description: "I had four informal conversations with people in their early-to-mid twenties who'd recently moved cities. Three things came up every time: Proximity is emotional, not geographical. Social proof is the real discovery mechanism. The decision window is tiny.",
+                outcome: "Identified that people need immediate recommendations with social proof, not endless browsing options."
+            },
+            {
+                step: "Design Decisions",
+                description: "One strong recommendation over a long list. The featured 'Happening Tonight' card takes up most of the screen deliberately. Social proof as a top-level element. Editorial visual language with serif logo, real photography, and warm parchment background. Five category pills, nothing more.",
+                outcome: "Created a design that feels like a city magazine recommendation rather than a database query."
+            },
+            {
+                step: "Reflection",
+                description: "Someone opening Roam has already decided they want to do something. The app's only job is to remove every reason for them to close it and stay home. That framing shaped every decision — the single card, the friends strip, the warm tone.",
+                outcome: "Designed an experience that prioritizes immediate action over exploration."
+            }
+        ],
+        
+        results: [
+            {
+                metric: "Design Philosophy",
+                value: "One Strong Recommendation"
+            },
+            {
+                metric: "Social Proof",
+                value: "Top-Level Element"
+            },
+            {
+                metric: "User Experience",
+                value: "Editorial Visual Language"
+            }
+        ],
+        
+        images: ["Roam.png"],
+        available: true,
+        dateUploaded: getToday(),
+        dateUpdated: getToday(),
+    },
+    {
         id: "hamro-patro",
         title: "Hamro Patro (Redesign)",
         shortDescription:
