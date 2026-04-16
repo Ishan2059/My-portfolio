@@ -227,12 +227,13 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                     <motion.div
                                         key={index}
                                         variants={fadeInUp}
-                                        className="w-full max-w-2xl rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="w-full max-w-3xl rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-lg hover:shadow-xl transition-all duration-300 p-8"
                                     >
                                         <img
                                             src={imagePath}
                                             alt={`${study.title} screenshot ${index + 1}`}
-                                            className="w-full h-auto object-contain"
+                                            className="w-full h-auto object-contain mx-auto"
+                                            style={{ minHeight: '400px' }}
                                             onError={(e) => {
                                                 const img = e.currentTarget;
                                                 if (img.dataset.fallbacked === "1") return;
