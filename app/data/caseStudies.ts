@@ -206,7 +206,7 @@ export const caseStudies: CaseStudy[] = [
             }
         ],
         
-        images: ["Roam.png"],
+        images: ["roam (3).png"],
         available: true,
         dateUploaded: getToday(),
         dateUpdated: getToday(),
