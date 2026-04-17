@@ -49,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
         timeline: "3 weeks",
         platform: "Mobile App",
         tags: ["UX Research", "UI Design", "Solo Project", "Self-initiated"],
-        tools: ["Figma", "Base44"],
+        tools: ["Figma"],
         
         problem: "I narrowed the scope to one type of person: someone in their mid-twenties who does not live with their parents, has a relatively stable income, and has no real system for managing it. They are not in a financial crisis. They are simply floating by - spending money with little conscious thought and checking their bank balance with a knot in their stomach. They're not looking for a financial planning tool. They want something that gives them a clear, honest picture of where they stand without making it feel like they have already failed.",
         
