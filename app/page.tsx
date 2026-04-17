@@ -2,7 +2,6 @@
 
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Projects from "./components/Projects";
 import CaseStudies from "./components/CaseStudies";
 import DesignSystem from "./components/DesignSystem";
 import Contact from "./components/Contact";
@@ -21,7 +20,6 @@ export default function Home() {
           <Hero />
           <About />
           <CaseStudies />
-          <Projects />
           <DesignSystem />
           <Contact />
         </main>
