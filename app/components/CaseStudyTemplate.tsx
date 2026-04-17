@@ -223,17 +223,24 @@ export default function CaseStudyTemplate({ study }: CaseStudyTemplateProps) {
                                     : `/case-studies/${study.id}/Sixty images/${image}`;
                                 const fallbackPath = `/case-studies/${study.id}/Sixtyimages/${image}`;
                                 
+                                // Different sizing for different case studies
+                                const imageStyle = study.id === 'roam' 
+                                    ? { width: '50%', minHeight: 'auto' }
+                                    : study.id === 'minto'
+                                    ? { width: '1024px', maxWidth: '100%', height: 'auto' }
+                                    : { width: '100%', height: 'auto' };
+                                
                                 return (
                                     <motion.div
                                         key={index}
                                         variants={fadeInUp}
-                                        className="w-full max-w-3xl rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-lg hover:shadow-xl transition-all duration-300 p-8"
+                                        className="w-full max-w-full rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-lg hover:shadow-xl transition-all duration-300 p-8"
                                     >
                                         <img
                                             src={imagePath}
                                             alt={`${study.title} screenshot ${index + 1}`}
                                             className="h-auto object-contain mx-auto"
-                                            style={{ width: '50%', minHeight: 'auto' }}
+                                            style={imageStyle}
                                             onError={(e) => {
                                                 const img = e.currentTarget;
                                                 if (img.dataset.fallbacked === "1") return;
