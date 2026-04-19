@@ -68,7 +68,6 @@ export default function MinimalistNavbar() {
   const navLinks = [
     { label: 'HOME', href: '#', id: 'hero' },
     { label: 'ABOUT', href: '#about', id: 'about' },
-    { label: 'PROJECTS', href: '#projects', id: 'projects' },
     { label: 'CASE STUDIES', href: '/case-studies', id: 'case-studies' },
     { label: 'CONTACT', href: '#contact', id: 'contact' },
   ];
