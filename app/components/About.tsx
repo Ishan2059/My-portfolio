@@ -59,13 +59,13 @@ export default function About() {
                             About Me
                         </motion.h2>
                         <motion.p variants={itemVariants} className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                            I am a dedicated UI/UX Designer with a focus on building accessible, pixel-perfect user interfaces that blend art with code.
+                            I design accessible, pixel-perfect interfaces that balance usability with business goals.
                         </motion.p>
                         <motion.p variants={itemVariants} className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                            I approach design with empathy, research, and iteration—starting from understanding user needs to delivering polished, scalable solutions. I'm especially interested in crafting seamless user flows, meaningful interactions, and modern design systems that balance usability with business goals.
+                            My process combines research, iteration, and scalable design systems to create products people actually enjoy using.
                         </motion.p>
                         <motion.p variants={itemVariants} className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                            When I'm not at the computer, I'm usually hanging out with my friends, reading, or running.
+                            When I'm not designing, I'm usually reading, running, or exploring Nepal's growing design community.
                         </motion.p>
                     </motion.div>
 

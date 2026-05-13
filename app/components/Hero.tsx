@@ -24,7 +24,7 @@ export default function Hero() {
     return (
         <MinimalistHero
             logoText="Ishan."
-            mainText="Hi, I'm Ishan, a UI/UX Designer who translates complex problems into intuitive, comfortable digital experiences. My focus is on Human-Centered design, ensuring every pixel serves a purpose."
+            mainText="I'm Ishan Mishra, a Nepal-based UI/UX designer. I design calm, accessible interfaces for fintech, mental wellness, and local discovery apps."
             readMoreLink="#about"
             imageSrc={profileImage}
             imageAlt="Profile photo of Ishan Mishra"

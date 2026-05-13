@@ -49,7 +49,7 @@ export default function Contact() {
                         variants={itemVariants}
                         className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400"
                     >
-                        I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        Currently open to new opportunities, collaborations, and product design conversations.
                     </motion.p>
                     <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                         <motion.div

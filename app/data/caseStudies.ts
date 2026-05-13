@@ -43,7 +43,7 @@ export const caseStudies: CaseStudy[] = [
     {
         id: "minto",
         title: "Minto",
-        shortDescription: "Redesigning the relationship between young people and their money through calm, emotionally accessible budgeting.",
+        shortDescription: "Making budgeting feel less stressful for young adults. Problem: Financial apps feel overwhelming. Solution: Calm, emotionally aware UX. Outcome: Lower financial anxiety during testing.",
         valueTitle: "Minto: Redefining Young Finance",
         role: "UX Researcher & UI Designer",
         timeline: "3 weeks",
@@ -99,7 +99,7 @@ export const caseStudies: CaseStudy[] = [
     {
         id: "sixty",
         title: "Sixty",
-        shortDescription: "A React Native mental wellness app built in 24 hours to solve weekend overthinking through constrained 60-second daily reflections.",
+        shortDescription: "A mental wellness app built around constrained daily reflection. Problem: Journaling feels mentally heavy. Solution: 60-second guided interaction. Outcome: Faster habit consistency.",
         valueTitle: "The 60-Second Friction Fix",
         role: "Product Designer & Developer",
         timeline: "24 Hours",
@@ -159,7 +159,7 @@ export const caseStudies: CaseStudy[] = [
     {
         id: "roam",
         title: "Roam",
-        shortDescription: "A local event discovery app that prioritizes social proof and immediate recommendations over endless browsing.",
+        shortDescription: "Local event discovery reimagined. Problem: Too many options, no trust signals. Solution: One strong recommendation + social proof. Outcome: Feels like a city magazine, not a database.",
         valueTitle: "Roam — Finding Your City Again",
         role: "UX Researcher & UI Designer",
         timeline: "3 weeks",

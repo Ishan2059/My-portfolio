@@ -43,7 +43,7 @@ export default function DesignSystem() {
                             Design System
                         </h2>
                         <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-                            Explore the comprehensive design system that powers this portfolio. Built with minimalist principles, consistent typography, and scalable components.
+                            A minimalist design system focused on clarity, consistency, and scalable components.
                         </p>
                     </motion.div>
 
